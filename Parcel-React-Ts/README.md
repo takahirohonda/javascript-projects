@@ -34,6 +34,9 @@ yarn add parcel-bundler sass --dev
 # eslint
 yarn add eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser --dev
 
+# stylelint
+yarn add stylelint stylelint-order stylelint-scss --dev
+
 # Enabling css module
 yarn add postcss-modules autoprefixer parcel-plugin-css-modules-type-generator --dev
 
