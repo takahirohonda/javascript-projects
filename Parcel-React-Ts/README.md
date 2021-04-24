@@ -1,4 +1,4 @@
-# parcel-ts-react
+# Parcel-Ts-React
 
 Trying out Parcel with Typescript React with CSS Modules and Jest
 
