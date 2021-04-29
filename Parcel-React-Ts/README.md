@@ -2,7 +2,7 @@
 
 Trying out Parcel with Typescript React with CSS Modules and Jest.
 
-Use Node version 16.
+Use Node version 14.
 
 ## Parcel Bundler review
 
