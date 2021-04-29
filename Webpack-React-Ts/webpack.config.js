@@ -1,3 +1,4 @@
+// Compatible with webpack 5
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -36,7 +37,7 @@ module.exports = (env, argv) => {
         //
         new TerserPlugin({
           parallel: true,
-          sourceMap: true, // Must be set to true if using source-maps in production
+          // sourceMap: true, // Must be set to true if using source-maps in production - this no longer exists in the new one.
           exclude: /\.(min)\.(js)$/i,
           terserOptions: {
             // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
@@ -50,7 +51,9 @@ module.exports = (env, argv) => {
         {
           test: /\.[tj]sx?$/,
           exclude: /node_modules/,
-          loader: 'ts-loader'
+          use: [
+            { loader: 'ts-loader'}
+          ]
         },
         {
           test: /\.css$/,
@@ -58,7 +61,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /(src).+\.scss$/,
-          loaders: [
+          use: [
             'style-loader',
             'css-modules-typescript-loader',
             {
@@ -72,7 +75,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /img.+\.svg$/,
-          loader: 'svg-inline-loader?classPrefix',
+          use: ['svg-inline-loader?classPrefix'],
         },
         {
           test: /fonts.+\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -91,12 +94,12 @@ module.exports = (env, argv) => {
         template: './public/index.html',
         filename: 'index.html'
       }),
-      new CopyWebpackPlugin({
-        patterns: [
-          { from: 'public/css', to: 'css' },
-          { from: 'public/js', to: 'js' },
-        ],
-      }),
+      // new CopyWebpackPlugin({
+      //   patterns: [
+      //     { from: 'public/css', to: 'css' },
+      //     { from: 'public/js', to: 'js' },
+      //   ],
+      // }),
     ]
   }
 }
