@@ -2,9 +2,28 @@
 
 Webpack project template with Typescript React with CSS Modules and Jest.
 
-Use node 16
+Use node 14
 
 ## Reference
+
+### (1) Style
+
+It supports both global CSS & CSS modules. Global CSS is imported in `Index.tsx`. Webpack packs CSS into JS file and it doesn't create cass file.
+
+### (2) Font
+
+Font will be imported by file-loader into dist folder when it is specified in `font-face`. In this case, we have `font-face` in `global.css` as below. Webpack will grab font file into the `font` folder in `dist` and transform the url to `fonts/Lato-Regular.ttf`.
+
+### (3) index.html
+
+`html-webpack-plugin` will add script tag with react bundle name and move to `dist` from `public`.
+
+```scss
+@font-face {
+  font-family: 'Lato';
+  src: url('../../public/fonts/Lato/Lato-Regular.ttf') format('truetype');
+}
+```
 
 ### Installation
 
