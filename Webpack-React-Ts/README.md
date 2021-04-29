@@ -10,6 +10,8 @@ Use node 14
 
 It supports both global CSS & CSS modules. Global CSS is imported in `Index.tsx`. Webpack packs CSS into JS file and it doesn't create cass file.
 
+`yarn cssExtractBuild` will create a separate CSS file.
+
 ### (2) Font
 
 Font will be imported by file-loader into dist folder when it is specified in `font-face`. In this case, we have `font-face` in `global.css` as below. Webpack will grab font file into the `font` folder in `dist` and transform the url to `fonts/Lato-Regular.ttf`.
@@ -44,4 +46,11 @@ yarn add eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y
 
 # Webpack & plugins
 yarn add webpack webpack-cli webpack-dev-server css-loader css-modules-typescript-loader file-loader html-webpack-plugin postcss-loader sass sass-loader source-map-loader style-loader svg-inline-loader terser-webpack-plugin copy-webpack-plugin ts-loader url-loader --dev
+```
+
+For creating a separate CSS file, we use mini-css-extract-plugin
+
+```bash
+# This doesn't need to be installed if we are just bundling css into js
+yarn add mini-css-extract-plugin css-minimizer-webpack-plugin --dev
 ```
