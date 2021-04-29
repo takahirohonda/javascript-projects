@@ -1,6 +1,8 @@
 # Parcel-Ts-React
 
-Trying out Parcel with Typescript React with CSS Modules and Jest
+Trying out Parcel with Typescript React with CSS Modules and Jest.
+
+Use Node version 16.
 
 ## Parcel Bundler review
 
