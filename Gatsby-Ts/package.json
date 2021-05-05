@@ -1,0 +1,51 @@
+{
+  "name": "Gatsby-Ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint-css": "stylelint 'src/**/*.{c,sc,le}ss'",
+    "fix-css": "printf '\\033[43mNote: You may need to run this again if any of your CSS property names contain uppercase letters.\\033[0m' && stylelint 'src/**/*.{c,sc,le}ss' --fix -f 'verbose'",
+    "lint-js": "eslint 'src/**/*.{ts,tsx,js,jsx}' --quiet",
+    "fix-js": "eslint 'src/**/*.{ts,tsx,js,jsx}' --fix --quiet",
+    "check-types": "tsc --noEmit",
+    "test": "jest",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "yarn develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@types/enzyme": "^3.10.8",
+    "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "gatsby": "^3.4.1",
+    "gatsby-plugin-mdx": "^2.4.0",
+    "gatsby-plugin-sass": "^4.4.0",
+    "jest": "^26.6.3",
+    "node-sass": "^5.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.2.4"
+  }
+}
