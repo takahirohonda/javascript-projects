@@ -17,13 +17,11 @@
     }
   },
   "include" : [
-      "./src/**/*"
+      "./src/**/*",
+      "./*"
   ],
   "exclude" : [
       "./src/**/tests/**/*",
-      "node_modules",
-      "mock-server",
-      "./src/form-components/FileUploader/*",
-      "./src/utils/helpers.ts"
+      "node_modules"
   ]
 }

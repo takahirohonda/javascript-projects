@@ -20,6 +20,9 @@ Instead of uing Gatsby starter kit, we just install dependencies.
 yarn add react react-dom
 yarn add gatsby typescript @types/react @types/react-dom jest ts-jest enzyme @types/jest @types/enzyme --dev
 
+# To make config files into TypeScript (like gatsby-browser.ts)
+yarn add gatsby-plugin-ts-config --dev
+
 # Gatsby plugins
 # Sass support
 yarn add gatsby-plugin-sass node-sass --dev
@@ -37,3 +40,8 @@ yarn add eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y
 ```
 
 3. Setting up the project
+
+- Add 3 files
+  - gatsby-browser.js
+  - gatsby-config.js
+  - gatsby-node.js
