@@ -1,6 +1,6 @@
 # Gatsby Template with TypeScript
 
-We are still using V2 because `gatsby-plugin-scss-typescript` is yet to support V3.
+We are still using V2 because `gatsby-plugin-scss-typescript` is yet to support V3. Follow v3 support issuer here: https://github.com/Debens/gatsby-plugin-scss-typescript/issues/24.
 
 ## REFERENCE
 
@@ -12,10 +12,15 @@ TypeScript is supported by Gatsby. All we need to do is to create tsx files inst
 
 2. Installation
 
-- SASS -> supported by `gatsby-plugin-sass` (for comipling global sass) and `gatsby-plugin-scss-typescript` (ebpack support for SCSS stylesheets modules & automatic generation of accompanying typing declaration (.d.ts) files). See further info [here](https://www.gatsbyjs.com/plugins/gatsby-plugin-scss-typescript/).
+- SASS -> `gatsby-plugin-scss-typescript` (ebpack support for SCSS stylesheets modules & automatic generation of accompanying typing declaration (.d.ts) files). See further info [here](https://www.gatsbyjs.com/plugins/gatsby-plugin-scss-typescript/).
 - MDX -> supported by `gatsby-plugin-mdx`
 
-Instead of uing Gatsby starter kit, we just install dependencies.
+For SASS with TypeScript, we have pretty much one options `gatsby-plugin-scss-typescript`.
+There is another module `gatsby-transformer-typescript-css-modules`, but it is not really maintained (https://github.com/jcreamer898/gatsby-plugin-typescript-css-modules/issues/3). I don't think it even supports v2.
+
+With a regular JS project, we can just use `gatsby-plugin-sass`. When we use `gatsby-plugin-scss-typescript`, we don't need to use `gatsby-plugin-sass`.
+
+Instead of using Gatsby starter kit, we are installing dependencies manually.
 
 ```bash
 # React, Typescript and Gatsby setup
