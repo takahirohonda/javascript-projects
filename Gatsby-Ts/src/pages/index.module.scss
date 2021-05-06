@@ -1,0 +1,11 @@
+
+@import '../styles/variables';
+
+.header {
+  font-family: $default-font-family;
+
+  // this order has to be the same as @font-face import
+  font-style: normal;
+  font-weight: 700;
+  color: pink;
+}
