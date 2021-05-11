@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: node14-test
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes: 
+      - ./:/app:delegated
+      - /app/node_modules

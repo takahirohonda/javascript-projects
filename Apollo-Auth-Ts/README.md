@@ -9,8 +9,12 @@ Example of Apollo auth example with TypeScript and Docker
 ## Dependencies
 
 ```bash
-yarn add apollo-server
-yarn add -D graphql-codegen eslint ts-node typescript graphql-codegen @graphql-codegen/typescript
+yarn add apollo-server graphql express
+
+yarn add -D graphql-codegen eslint ts-node typescript graphql-codegen @graphql-codegen/typescript nodemon @graphql-codegen/introspection @graphql-codegen/typescript-resolvers @graphql-codegen/cli jest
+
+# auth related
+yarn add bycryptjs jsonwebtoken
 ```
 
 **Notes**
