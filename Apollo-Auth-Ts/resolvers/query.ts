@@ -8,6 +8,6 @@ export const Query = {
     return dataSources.moviesDataSource.getMovies();
   },
   movieById: (parent: unknown, args: unknown, { dataSources }: Context, info: unknown) => {
-    return dataSources.moviesDataSource.getMovies();
+    return dataSources.moviesDataSource.getMoviesById();
   },
 };

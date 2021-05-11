@@ -11,7 +11,6 @@ export class MoviesDataSource extends DataSource {
   }
 
   getMoviesById(id: number) {
-    console.log(movies.filter(movie => movie.id === id));
     return movies.filter(movie => movie.id === id)[0];
   }
 }
