@@ -19,7 +19,11 @@ const server = new ApolloServer({
   resolvers,
   dataSources,
   context: ({ req }: any) => {
-    return verifyHeaderToken(req.header.authorization);
+    const token = req.header?.authorization;
+    if (token) {
+      return verifyHeaderToken(req.header.authorization)?.user;
+    }
+    return null;
   }
 });
 
