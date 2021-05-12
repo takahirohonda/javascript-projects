@@ -5,6 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 4001:4000
+      - 80:4000
     volumes: 
       - ./:/app:delegated
