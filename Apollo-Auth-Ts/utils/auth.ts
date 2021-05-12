@@ -5,7 +5,7 @@ export const createToken = (info: object) =>
 
 export const verifyToken = (token: string) => JWT.verify(token, process.env.SECRET as string);
 
-export const verifyHeaderToken = (token: string) => {
+export const verifyHeaderToken = (token: string): any => {
   if (token) {
     return verifyToken(token.replace('Bearer ', ''));
   }

@@ -1,20 +1,21 @@
 // Run:  yarn ts-node ./Reference/createJWT.ts
 
 import { createToken, verifyToken } from '../utils/auth';
+import { ADMIN_ROLE, READONLY_ROLE } from '../constants';
 
 process.env.SECRET = 'qwertyuiopasdfghjklzxcvbnm492817';
 
 const admin = {
   user: {
     username: 'admin_user',
-    role: ['Admin']
+    role: [ADMIN_ROLE]
   }
 };
 
 const readonly = {
   user: {
     username: 'readonly_user',
-    role: ['User']
+    role: [READONLY_ROLE]
   }
 };
 

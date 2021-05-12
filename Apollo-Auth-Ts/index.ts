@@ -1,10 +1,12 @@
-import { ApolloServer } from 'apollo-server-express';
+import { ApolloServer, makeExecutableSchema } from 'apollo-server-express';
+import { applyMiddleware } from 'graphql-middleware';
 import express from 'express';
 
 import { MoviesDataSource } from './datasources/moviesDataSource';
 import { typeDefs } from './schema';
 import {resolvers } from './resolvers';
 import { verifyHeaderToken } from './utils/auth';
+import { permissions } from './authorisation/permissions';
 
 require('dotenv').config(); // get local variable from .env file.
 
@@ -15,13 +17,16 @@ const dataSources = () => ({
 });
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema: applyMiddleware(
+    makeExecutableSchema({ typeDefs, resolvers }),
+    permissions
+  ),
   dataSources,
   context: ({ req }: any) => {
-    const token = req.header?.authorization;
+    const token = req.headers?.authorization;
+    console.log(verifyHeaderToken(token)?.user);
     if (token) {
-      return verifyHeaderToken(req.header.authorization)?.user;
+      return { user: verifyHeaderToken(token)?.user };
     }
     return null;
   }

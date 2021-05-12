@@ -8,4 +8,3 @@ services:
       - 4001:4000
     volumes: 
       - ./:/app:delegated
-      - /app/node_modules
