@@ -11,10 +11,10 @@ export interface Context {
 }
 
 export const Query = {
-  movies: (parent: unknown, args: unknown, { dataSources, user }: Context, info: unknown) => {
+  movies: (parent: unknown, args: unknown, { dataSources }: Context, info: unknown) => {
     return dataSources.moviesDataSource.getMovies();
   },
-  movieById: (parent: unknown, args: unknown, { dataSources, user }: Context, info: unknown) => {
-    return dataSources.moviesDataSource.getMoviesById();
+  movieById: (parent: unknown, { id }: any, { dataSources }: Context, info: unknown) => {
+    return dataSources.moviesDataSource.getMoviesById(id);
   },
 };

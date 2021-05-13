@@ -1,6 +1,6 @@
 branch-defaults:
   default:
-    environment: test-auth
+    environment: null
     group_suffix: null
 global:
   application_name: Apollo-Auth-Ts
