@@ -1,10 +1,10 @@
 services:
   app:
-    container_name: node14-apollo-auth
+    container_name: node14-apollo-auth-local
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - 4001:4000
     volumes: 
-      - ./:/app:delegated
+      - ./:/app

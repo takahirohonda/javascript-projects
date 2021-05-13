@@ -4,24 +4,36 @@ Example of Apollo auth example with TypeScript and Docker
 
 ## Get started
 
-1. Local server
-```
+**Start Local Server**
+
+```bash
+# Open server at http://localhost:4000/graphql
 yarn local-server
 ```
 
-2. Development with Docker
+**Local development with Docker**
 
 ```bash
+# Open server at http://localhost:4001/graphql
 # First time
-docker-compose up -d
-
+docker-compose -f docker-compose.local.yml up -d
+# Rebuild
+docker-compose -f docker-compose.local.yml up --build -d
 # Start docker
 docker-compose start
 # Hot loading for compiling TypeScript
 yarn develop
 ```
 
-go to `http://localhost:4001/graphql`
+**Deployment**
+
+Deployment uses docker-compose.yml file
+
+```bash
+# Deployment to Elastic Beanstalk
+eb init # to create .elasticbeanstalk (files committed)
+
+```
 
 
 

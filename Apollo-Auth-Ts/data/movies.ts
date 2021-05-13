@@ -2,7 +2,7 @@ export const movies = [
   {
     id: 1,
     year: '1994',
-    title: 'Interview with the Vampire - updated',
+    title: 'Interview with the Vampire',
     country: 'United States',
     director: 'Neil Jordan',
     genra: ['Vampire', 'Drama'],
