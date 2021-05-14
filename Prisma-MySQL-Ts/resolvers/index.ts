@@ -1,5 +1,6 @@
-import { Query } from './query';
+import { NonEmptyArray } from "type-graphql";
+import BookResolver from "./BookResolver";
 
-export const resolvers = {
-  Query
-};
+export const resolvers: NonEmptyArray<Function> = [
+  BookResolver
+]

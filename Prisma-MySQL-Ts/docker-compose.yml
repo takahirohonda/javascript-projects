@@ -1,10 +1,9 @@
 services:
   app:
-    container_name: node14-prisma-mysql
+    container_name: prisma-mysql-ts-prod
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - 80:4000
 
- 
