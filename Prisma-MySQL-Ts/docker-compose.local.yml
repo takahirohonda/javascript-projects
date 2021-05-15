@@ -8,6 +8,9 @@ services:
       - 5001:4000
     volumes: 
       - ./:/app
+    depends_on:
+      - db
+    
   db:
     container_name: prisma-mysql-ts-db
     image: mysql:8.0.23 # Version to be updated to match Aurora
