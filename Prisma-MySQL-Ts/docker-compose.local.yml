@@ -1,13 +1,13 @@
 services:
-  # app:
-  #   container_name: prisma-mysql-ts
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - 5001:4000
-  #   volumes: 
-  #     - ./:/app
+  app:
+    container_name: prisma-mysql-ts
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5001:4000
+    volumes: 
+      - ./:/app
   db:
     container_name: prisma-mysql-ts-db
     image: mysql:8.0.23 # Version to be updated to match Aurora
