@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo "Getting docker containers ready"
+docker-compose -f docker-compose.local.yml up -d
+docker-compose exec yarn install
+docker-compose exec yarn prisma migrate dev --name
+docker-compose exec yarn fixture
+docker-compose exec yarn build
+docker-compose exec node ./dist/index.js
