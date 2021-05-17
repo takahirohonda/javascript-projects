@@ -9,6 +9,7 @@
     "check-types": "tsc --noEmit",
     "test": "jest",
     "fixtures": "ts-node ./fixtures/bookFixture.ts",
+    "format-prisma": "yarn prisma format",
     "start-local": "nodemon --watch '**/*.ts' --ignore '**/*.spec.ts' --exec 'ts-node' ./index.ts",
     "build": "tsc",
     "develop": "tsc -w"

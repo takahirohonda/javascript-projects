@@ -12,7 +12,14 @@ generator typegraphql {
 }
 
 model Book {
-  id        Int     @default(autoincrement()) @id
-  title     String
-  author    String
+  id       Int    @id @default(autoincrement())
+  title    String
+  authorId Int
+  author   Author @relation(fields: [authorId], references: [id])
+}
+
+model Author {
+  id   Int    @id @default(autoincrement())
+  name String
+  book Book[]
 }

@@ -1,6 +1,6 @@
-import "reflect-metadata";
-import { Arg, Query, Resolver } from "type-graphql";
-import { Book } from "@generated/type-graphql";
+import 'reflect-metadata';
+import { Arg, Query, Resolver } from 'type-graphql';
+import { Book } from '@generated/type-graphql';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -13,7 +13,7 @@ class BookResolver {
   }
 
   @Query(() => Book)
-  async book(@Arg("id", () => Number) id: number) {
+  async book(@Arg('id', () => Number) id: number) {
     return await prisma.book.findFirst({
       where: {
         id
