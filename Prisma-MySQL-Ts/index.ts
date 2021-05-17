@@ -5,7 +5,8 @@ import { buildSchemaSync } from 'type-graphql';
 import { resolvers } from './resolvers';
 
 const schema = buildSchemaSync({
-  resolvers
+  resolvers,
+  emitSchemaFile: true
 });
 
 const server = new ApolloServer({

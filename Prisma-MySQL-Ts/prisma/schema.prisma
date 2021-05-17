@@ -11,15 +11,15 @@ generator typegraphql {
   provider = "typegraphql-prisma"
 }
 
-model Book {
+model book {
   id       Int    @id @default(autoincrement())
   title    String
   authorId Int
-  author   Author @relation(fields: [authorId], references: [id])
+  author   author @relation(fields: [authorId], references: [id])
 }
 
-model Author {
+model author {
   id   Int    @id @default(autoincrement())
   name String
-  book Book[]
+  book book[]
 }

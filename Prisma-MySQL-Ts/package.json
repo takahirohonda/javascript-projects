@@ -8,8 +8,9 @@
     "lint-fixup": "./node_modules/.bin/eslint ./ --ext .ts,.tsx --fix",
     "check-types": "tsc --noEmit",
     "test": "jest",
-    "fixtures": "ts-node ./fixtures/bookFixture.ts",
-    "format-prisma": "yarn prisma format",
+    "fixtures": "ts-node ./fixtures/index.ts",
+    "prisma-format": "yarn prisma format",
+    "prisma-migrate": "yarn prisma migrate dev",
     "start-local": "nodemon --watch '**/*.ts' --ignore '**/*.spec.ts' --exec 'ts-node' ./index.ts",
     "build": "tsc",
     "develop": "tsc -w"
