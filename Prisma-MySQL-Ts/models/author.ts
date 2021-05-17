@@ -7,12 +7,9 @@ export class Author {
   id: number
 
   @Field()
-  title: string
-
-  @Field()
-  authorId: number
+  name: string
 
   // eslint-disable-next-line no-unused-vars
-  @Field(type => [Book] )
+  @Field(type => [Book])
   book: Book
 }

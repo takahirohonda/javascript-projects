@@ -3,9 +3,16 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Author {
+  book: [Book!]!
+  id: Float!
+  name: String!
+}
+
 type Book {
-  authorId: Int!
-  id: Int!
+  author: Author!
+  authorId: Float!
+  id: Float!
   title: String!
 }
 
