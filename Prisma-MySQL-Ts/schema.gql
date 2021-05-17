@@ -4,19 +4,122 @@
 # -----------------------------------------------
 
 type Author {
-  book: [Book!]!
-  id: Float!
+  book(cursor: BookWhereUniqueInput, distinct: [BookScalarFieldEnum!], orderBy: [BookOrderByInput!], skip: Int, take: Int, where: BookWhereInput): [Book!]!
+  id: Int!
   name: String!
+}
+
+input AuthorRelationFilter {
+  is: AuthorWhereInput
+  isNot: AuthorWhereInput
+}
+
+input AuthorWhereInput {
+  AND: [AuthorWhereInput!]
+  NOT: [AuthorWhereInput!]
+  OR: [AuthorWhereInput!]
+  book: BookListRelationFilter
+  id: IntFilter
+  name: StringFilter
 }
 
 type Book {
   author: Author!
-  authorId: Float!
-  id: Float!
+  authorId: Int!
+  id: Int!
   title: String!
 }
 
+input BookListRelationFilter {
+  every: BookWhereInput
+  none: BookWhereInput
+  some: BookWhereInput
+}
+
+input BookOrderByInput {
+  authorId: SortOrder
+  id: SortOrder
+  title: SortOrder
+}
+
+enum BookScalarFieldEnum {
+  authorId
+  id
+  title
+}
+
+input BookWhereInput {
+  AND: [BookWhereInput!]
+  NOT: [BookWhereInput!]
+  OR: [BookWhereInput!]
+  author: AuthorRelationFilter
+  authorId: IntFilter
+  id: IntFilter
+  title: StringFilter
+}
+
+input BookWhereUniqueInput {
+  id: Int
+}
+
+input IntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntFilter
+  notIn: [Int!]
+}
+
+input NestedIntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: NestedIntFilter
+  notIn: [Int!]
+}
+
+input NestedStringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringFilter
+  notIn: [String!]
+  startsWith: String
+}
+
 type Query {
+  author(id: Float!): Author!
+  authors: [Author!]!
   book(id: Float!): Book!
   books: [Book!]!
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input StringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: NestedStringFilter
+  notIn: [String!]
+  startsWith: String
 }

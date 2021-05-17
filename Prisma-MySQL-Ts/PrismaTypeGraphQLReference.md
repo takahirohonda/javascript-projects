@@ -14,9 +14,43 @@ generator typegraphql {
 }
 ```
 
-## (3) Relationship does not get reflected with typegraphql-prisma
+## (3) Related object does not get reflected with typegraphql-prisma
 
-**Issue**
+**Solutions**
+
+1. Create a custom model and use it.
+
+2. Import relation Resolver from generated resolver.
+
+```typescript
+import { NonEmptyArray } from 'type-graphql';
+import { BookResolver } from './BookResolver';
+import { AuthorResolver } from './AuthorResolver';
+import { BookRelationsResolver, AuthorRelationsResolver } from '@generated/type-graphql';
+
+export const resolvers: NonEmptyArray<Function> = [
+  BookResolver,
+  BookRelationsResolver,
+  AuthorResolver,
+  AuthorRelationsResolver
+];
+```
+
+When using the generated resolvers, you have to first provide the PrismaClient instance into the context under prisma key, to make it available for the crud and relations resolvers:
+
+```TypeScript
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+const server = new ApolloServer({
+  schema, // from previous step
+  playground: true,
+  context: (): Context => ({ prisma }),
+});
+```
+
+**Issue Details**
 
 We have two tables. 
 
@@ -122,7 +156,5 @@ type Query {
   books: [Book!]!
 }
 ```
-
-The solution is to create a custom models.
 
 
