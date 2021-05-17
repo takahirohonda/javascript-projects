@@ -13,7 +13,7 @@ yarn install
 yarn prisma migrate dev --name init
 # run fixture
 yarn fixture
-# Start local server and go to localhost:400/graphql
+# Start local server and go to localhost:4000/graphql
 yarn start-local
 ```
 

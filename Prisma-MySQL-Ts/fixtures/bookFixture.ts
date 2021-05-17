@@ -16,6 +16,8 @@ const createRecords = async () => {
     ],
     skipDuplicates: true
   });
+  
+  process.exit();
 };
 
 createRecords();

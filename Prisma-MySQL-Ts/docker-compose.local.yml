@@ -1,9 +1,10 @@
 services:
   app:
     container_name: prisma-mysql-ts
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: node:14-alpine
     ports:
       - 5001:4000
     volumes: 

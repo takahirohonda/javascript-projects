@@ -8,7 +8,7 @@
     "lint-fixup": "./node_modules/.bin/eslint ./ --ext .ts,.tsx --fix",
     "check-types": "tsc --noEmit",
     "test": "jest",
-    "fixture": "ts-node ./fixtures/bookFixture.ts",
+    "fixtures": "ts-node ./fixtures/bookFixture.ts",
     "start-local": "nodemon --watch '**/*.ts' --ignore '**/*.spec.ts' --exec 'ts-node' ./index.ts",
     "build": "tsc",
     "develop": "tsc -w"
