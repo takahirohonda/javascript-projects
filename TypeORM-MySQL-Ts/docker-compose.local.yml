@@ -1,0 +1,27 @@
+services:
+  # app:
+  #   container_name: typeorm-mysql-ts
+  #   # build:
+  #   #   context: .
+  #   #   dockerfile: Dockerfile
+  #   image: node:14-alpine
+  #   ports:
+  #     - 5002:4000
+  #   volumes: 
+  #     - ./:/app
+  #   depends_on:
+  #     - db
+    
+  db:
+    container_name: typeorm-mysql-ts-db
+    image: mysql:8.0.23 # Version to be updated to match Aurora
+    environment:
+      # Optional to create a new user and password
+      # Granted superuser permission by default
+      MYSQL_USER: test
+      MYSQL_PASSWORD: Password123
+      # root password is required
+      MYSQL_ROOT_PASSWORD: Password123
+      MYSQL_DATABASE: typeorm
+    ports:
+      - 5008:3306

@@ -1,0 +1,24 @@
+{
+   "type": "mysql",
+   "host": "localhost",
+   "port": 5008,
+   "username": "test",
+   "password": "Password123",
+   "database": "typeorm",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      "models/**/*.ts"
+   ],
+   "migrations": [
+      "migration/**/*.ts"
+   ],
+   "subscribers": [
+      "subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "models",
+      "migrationsDir": "migration",
+      "subscribersDir": "subscriber"
+   }
+}

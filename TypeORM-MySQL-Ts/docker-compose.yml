@@ -1,0 +1,9 @@
+services:
+  app:
+    container_name: typeorm-mysql-ts-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:4000
+

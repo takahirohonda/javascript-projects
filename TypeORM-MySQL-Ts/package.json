@@ -1,5 +1,5 @@
 {
-  "name": "Prisma-MySQL-Ts",
+  "name": "TypeORM-MySQL-Ts",
   "version": "1.0.0",
   "main": "index.ts",
   "license": "Mdh",
@@ -9,20 +9,18 @@
     "check-types": "tsc --noEmit",
     "test": "jest",
     "fixtures": "ts-node ./fixtures/index.ts",
-    "prisma-format": "yarn prisma format",
-    "prisma-migrate": "yarn prisma migrate dev",
+    "typeorm-migrate": "yarn ...",
     "start-local": "nodemon --watch '**/*.ts' --ignore '**/*.spec.ts' --exec 'ts-node' ./index.ts",
     "build": "tsc",
     "develop": "tsc -w"
   },
   "dependencies": {
-    "@prisma/client": "^2.22.1",
     "apollo-server": "^2.24.0",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "graphql-fields": "^2.0.3",
     "graphql-middleware": "^6.0.10",
-    "graphql-shield": "^7.5.0"
+    "typeorm": "^0.2.32"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.19.0",
@@ -34,11 +32,9 @@
     "graphql-codegen": "^0.4.0",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
-    "prisma": "2.22.1",
     "reflect-metadata": "^0.1.13",
     "ts-node": "^9.1.1",
     "type-graphql": "^1.1.1",
-    "typegraphql-prisma": "^0.14.2",
     "typescript": "^4.2.4"
   }
 }

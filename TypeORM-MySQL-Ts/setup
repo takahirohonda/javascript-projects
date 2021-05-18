@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "Getting docker containers ready"
+docker-compose -f docker-compose.local.yml up -d
+echo "Installing dependencies"
+yarn install
+echo "Running migration"
+yarn prisma migrate dev --name init
+echo "Inserting fixtures"
+yarn fixtures
+echo "Compiling TypeScript"
+yarn build
+echo "Starting app"
+docker-compose exec app node ./dist/index.js
