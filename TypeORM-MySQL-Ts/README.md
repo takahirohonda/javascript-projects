@@ -36,3 +36,10 @@ yarn typeorm init --name Starter --database mysql
 ### DB setup
 
 Database connection details are in `ormconfig.json`
+
+### Migration
+
+```bash
+typeorm migration:run
+typeorm migration:generate -- -n migrationNameHere
+```

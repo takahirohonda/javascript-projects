@@ -1,10 +1,10 @@
 import { ApolloServer } from 'apollo-server';
 import { buildSchemaSync } from 'type-graphql';
 import { resolvers } from './resolvers';
-import { createConnection } from "typeorm";
+import { createConnection } from 'typeorm';
 
 const main = async () => {
-  const connection = await createConnection()
+  const connection = await createConnection();
 
   const schema = buildSchemaSync({
     resolvers,
@@ -18,6 +18,6 @@ const main = async () => {
 
   await server.listen(process.env.PORT || 4000);
   console.log('GraphQL with TypeORM running at port 4000');
-}
+};
 
 main();

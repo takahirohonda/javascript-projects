@@ -9,7 +9,7 @@
     "check-types": "tsc --noEmit",
     "test": "jest",
     "fixtures": "ts-node ./fixtures/index.ts",
-    "typeorm-migrate": "yarn ...",
+    "typeorm-migrate": "yarn typeorm migration:run",
     "start-local": "nodemon --watch '**/*.ts' --ignore '**/*.spec.ts' --exec 'ts-node' ./index.ts",
     "build": "tsc",
     "develop": "tsc -w"
@@ -20,6 +20,7 @@
     "graphql": "^15.5.0",
     "graphql-fields": "^2.0.3",
     "graphql-middleware": "^6.0.10",
+    "mysql": "^2.18.1",
     "typeorm": "^0.2.32"
   },
   "devDependencies": {
