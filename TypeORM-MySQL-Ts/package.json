@@ -1,7 +1,7 @@
 {
   "name": "TypeORM-MySQL-Ts",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "index.js",
   "license": "Mdh",
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./ --ext .ts",
@@ -9,7 +9,8 @@
     "check-types": "tsc --noEmit",
     "test": "jest",
     "fixtures": "ts-node ./fixtures/index.ts",
-    "typeorm-migrate": "yarn typeorm migration:run",
+    "typeorm-migrate-generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -n init",
+    "typeorm-migrate": "ts-node ./node_modules/typeorm/cli.js migration:run",
     "start-local": "nodemon --watch '**/*.ts' --ignore '**/*.spec.ts' --exec 'ts-node' ./index.ts",
     "build": "tsc",
     "develop": "tsc -w"
@@ -20,7 +21,7 @@
     "graphql": "^15.5.0",
     "graphql-fields": "^2.0.3",
     "graphql-middleware": "^6.0.10",
-    "mysql": "^2.18.1",
+    "mysql": "npm:mysql2@^2.1.0",
     "typeorm": "^0.2.32"
   },
   "devDependencies": {
