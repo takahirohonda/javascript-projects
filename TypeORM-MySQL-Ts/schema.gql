@@ -3,13 +3,21 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Author {
+  books: [Book!]!
+  id: Int!
+  name: String!
+}
+
 type Book {
-  authorId: Float!
-  id: Float!
+  authors: [Author!]!
+  id: Int!
   title: String!
 }
 
 type Query {
+  author(id: Float!): Author!
+  authors: [Author!]!
   book(id: Float!): Book!
   books: [Book!]!
 }

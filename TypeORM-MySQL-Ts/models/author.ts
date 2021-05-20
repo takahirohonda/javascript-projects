@@ -1,10 +1,10 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from 'typeorm';
 import { ObjectType, Field, Int } from 'type-graphql';
-import { Author } from './author';
+import { Book } from './book';
 
 @ObjectType()
 @Entity()
-export class Book {
+export class Author {
 
   // eslint-disable-next-line no-unused-vars
   @Field(type => Int)
@@ -13,13 +13,13 @@ export class Book {
 
   @Field()
   @Column()
-  title: string 
-  
+  name: string
+
   // eslint-disable-next-line no-unused-vars
-  @Field(type => [Author])
-  @ManyToMany(() => Author, author => author.books, {
+  @Field(type => [Book])
+  @ManyToMany(() => Book, book => book.authors, {
     onDelete: 'CASCADE'
   })
   @JoinTable()
-  authors: Author[]
+  books: Book[]
 }

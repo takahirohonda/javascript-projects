@@ -6,11 +6,11 @@ import { Book } from '../models';
 export class BookResolver {
   @Query(() => [Book])
   async books(@Ctx() { connection }: any) {
-    return await connection.getRepository(Book).find();
+    return await connection.getRepository(Book).find({ relations: ['authors']});
   }
 
   @Query(() => Book)
   async book(@Arg('id', () => Number) id: number, @Ctx() { connection }: any) {
-    return await connection.getRepository(Book).findOne({id});
+    return await connection.getRepository(Book).findOne({where: { id }, relations: ['authors']});
   }
 }

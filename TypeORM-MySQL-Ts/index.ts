@@ -13,6 +13,8 @@ const main = async () => {
 
   const server = new ApolloServer({
     schema,
+    // it's not necessary because it's better to use getConnection().
+    // Just to show the connection can be passed through context for fun in BookResolver
     context: () => ({ connection }),
   });
 

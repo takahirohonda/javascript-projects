@@ -43,3 +43,51 @@ Database connection details are in `ormconfig.json`
 typeorm migration:run
 typeorm migration:generate -- -n migrationNameHere
 ```
+
+### GraphQL Query Examples
+
+```graphql
+query books {
+  books {
+    id
+    title
+    authors {
+      id
+      name
+    }
+  }
+}
+
+query book {
+  book (id: 25) {
+    id
+    title
+    authors {
+      id
+      name
+    }
+  }
+}
+
+query authors {
+  authors {
+    id
+    name
+    books {
+      id
+      title
+    }
+  }
+}
+
+query author {
+  author (id: 14) {
+    id
+    name
+    books {
+      id
+      title
+    }
+  }
+}
+```
