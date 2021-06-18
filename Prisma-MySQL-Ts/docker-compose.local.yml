@@ -4,7 +4,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: node:14-alpine
     ports:
       - 5001:4000
     volumes: 
