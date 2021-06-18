@@ -5,7 +5,7 @@
 ```bash
 # Install Dependencies
 yarn install
-# Start containers
+# Start containers and go to localhost:5002/graphql
 docker-compose -f docker-compose.local.yml up -d
 
 # Run migration (optionally, we can pass the argument)
@@ -91,3 +91,13 @@ query author {
   }
 }
 ```
+
+# In progress with container setup
+
+At the moment app container cannot connect to database with the error below:
+
+```text
+UnhandledPromiseRejectionWarning: Error: connect ECONNREFUSED 127.0.0.1:5008
+```
+
+I added networks with backend and connected both containers, but still having an error...

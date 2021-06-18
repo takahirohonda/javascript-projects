@@ -1,23 +1,26 @@
 services:
-  # app:
-  #   container_name: typeorm-mysql-ts
-  #   # build:
-  #   #   context: .
-  #   #   dockerfile: Dockerfile
-  #   image: node:14-alpine
-  #   ports:
-  #     - 5002:4000
-  #   volumes: 
-  #     - ./:/app
-  #   depends_on:
-  #     - db
+  app:
+    container_name: typeorm-mysql-ts
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node:14-alpine
+    ports:
+      - 5002:4000
+    volumes: 
+      - ./:/app
+    depends_on:
+      - db
+    links:
+      - db
+    networks:
+      - backend
     
   db:   
     container_name: typeorm-mysql-ts-db
-    # restart: always
-    # Set SQL mode to avoid FULL_GROUP_BY
+    restart: always
     command: --default-authentication-plugin=mysql_native_password
-    image: mysql:8.0.23 # mysql:8.0.23 doesn't work with typeorm's mysql
+    image: mysql:8.0.23
     environment:
       # Optional to create a new user and password
       # Granted superuser permission by default
@@ -28,3 +31,8 @@ services:
       MYSQL_DATABASE: typeorm
     ports:
       - 5008:3306
+    networks:
+      - backend
+
+networks:
+  backend:

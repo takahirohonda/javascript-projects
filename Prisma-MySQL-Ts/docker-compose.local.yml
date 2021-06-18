@@ -1,9 +1,9 @@
 services:
   app:
     container_name: prisma-mysql-ts
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: node:14-alpine
     ports:
       - 5001:4000
@@ -11,10 +11,16 @@ services:
       - ./:/app
     depends_on:
       - db
+    links:
+      - db
+    networks:
+      - backend
     
   db:
     container_name: prisma-mysql-ts-db
-    image: mysql:8.0.23 # Version to be updated to match Aurora
+    image: mysql:8.0.23
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
     environment:
       # Optional to create a new user and password
       # Granted superuser permission by default
@@ -25,3 +31,8 @@ services:
       MYSQL_DATABASE: prisma
     ports:
       - 5007:3306
+    networks:
+      - backend
+
+networks:
+  backend:
