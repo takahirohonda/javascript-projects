@@ -1,0 +1,12 @@
+{
+  "name": "Elementary",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node_modules/@nick-thompson/elementary/bin/elementary ."
+  },
+  "dependencies": {
+    "@nick-thompson/elementary": "^0.2.2"
+  }
+}
