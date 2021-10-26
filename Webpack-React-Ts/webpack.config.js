@@ -16,7 +16,7 @@ module.exports = (env, argv) => {
   return {
     mode: argv.mode || 'development',
     entry: {
-      main: './src/Index.tsx',
+      main: './src/index.tsx',
     },
     output: {
       filename: '[name]-react.js',
