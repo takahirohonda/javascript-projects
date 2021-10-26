@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
+
 export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** All built-in and custom scalars, mapped to their actual values */
@@ -84,7 +85,6 @@ export type ContactInput = {
   officeId: Scalars['Float'];
 };
 
-
 export type Endorsement = {
   __typename?: 'Endorsement';
   remarks?: Maybe<Scalars['String']>;
@@ -104,7 +104,6 @@ export type Mutation = {
   __typename?: 'Mutation';
   addOrUpdateProfile: Profile;
 };
-
 
 export type MutationAddOrUpdateProfileArgs = {
   profile: ProfileInput;
@@ -193,7 +192,6 @@ export type Query = {
   profile: Profile;
 };
 
-
 export type QueryProfileArgs = {
   id: Scalars['ID'];
 };
@@ -236,7 +234,6 @@ export type ProfileByIdQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
-
 export type ProfileByIdQuery = (
   { __typename?: 'Query' }
   & { profile: (
@@ -257,7 +254,6 @@ export type ProfileByIdQuery = (
 
 export type ProfilesQueryVariables = Exact<{ [key: string]: never; }>;
 
-
 export type ProfilesQuery = (
   { __typename?: 'Query' }
   & { profiles: Array<(
@@ -275,7 +271,6 @@ export type ProfilesQuery = (
     )> }
   )> }
 );
-
 
 export const ProfileByIdDocument = gql`
     query profileById($id: ID!) {
@@ -317,11 +312,11 @@ export const ProfileByIdDocument = gql`
  * });
  */
 export function useProfileByIdQuery(baseOptions?: Apollo.QueryHookOptions<ProfileByIdQuery, ProfileByIdQueryVariables>) {
-        return Apollo.useQuery<ProfileByIdQuery, ProfileByIdQueryVariables>(ProfileByIdDocument, baseOptions);
-      }
+  return Apollo.useQuery<ProfileByIdQuery, ProfileByIdQueryVariables>(ProfileByIdDocument, baseOptions);
+}
 export function useProfileByIdLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProfileByIdQuery, ProfileByIdQueryVariables>) {
-          return Apollo.useLazyQuery<ProfileByIdQuery, ProfileByIdQueryVariables>(ProfileByIdDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<ProfileByIdQuery, ProfileByIdQueryVariables>(ProfileByIdDocument, baseOptions);
+}
 export type ProfileByIdQueryHookResult = ReturnType<typeof useProfileByIdQuery>;
 export type ProfileByIdLazyQueryHookResult = ReturnType<typeof useProfileByIdLazyQuery>;
 export type ProfileByIdQueryResult = Apollo.QueryResult<ProfileByIdQuery, ProfileByIdQueryVariables>;
@@ -364,11 +359,11 @@ export const ProfilesDocument = gql`
  * });
  */
 export function useProfilesQuery(baseOptions?: Apollo.QueryHookOptions<ProfilesQuery, ProfilesQueryVariables>) {
-        return Apollo.useQuery<ProfilesQuery, ProfilesQueryVariables>(ProfilesDocument, baseOptions);
-      }
+  return Apollo.useQuery<ProfilesQuery, ProfilesQueryVariables>(ProfilesDocument, baseOptions);
+}
 export function useProfilesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProfilesQuery, ProfilesQueryVariables>) {
-          return Apollo.useLazyQuery<ProfilesQuery, ProfilesQueryVariables>(ProfilesDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<ProfilesQuery, ProfilesQueryVariables>(ProfilesDocument, baseOptions);
+}
 export type ProfilesQueryHookResult = ReturnType<typeof useProfilesQuery>;
 export type ProfilesLazyQueryHookResult = ReturnType<typeof useProfilesLazyQuery>;
 export type ProfilesQueryResult = Apollo.QueryResult<ProfilesQuery, ProfilesQueryVariables>;

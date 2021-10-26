@@ -1,9 +1,7 @@
 {
-  "name": "profiles-mfe",
+  "name": "react-graphql-ts",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:estimateone/profiles-mfe.git",
-  "license": "Estimate One",
   "scripts": {
     "start": "yarn generate-config-file && webpack-dev-server --open",
     "watch": "generate-config-file && webpack-dev-server --open --watch",
@@ -22,7 +20,6 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "@estimateone/frontend-components": "git+ssh://git@github.com:estimateone/frontend-components.git#9.0.0",
     "@graphql-codegen/cli": "1.19.0",
     "@graphql-codegen/typescript": "1.17.11",
     "@graphql-codegen/typescript-operations": "1.17.8",
