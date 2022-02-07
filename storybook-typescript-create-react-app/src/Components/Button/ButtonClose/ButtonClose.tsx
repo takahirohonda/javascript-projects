@@ -1,17 +1,16 @@
-import { COLOR } from 'utils'
+import { COLOR } from "utils";
 
-import { ReactComponent as CloseIcon } from 'assets/svg/close.svg'
-// import CloseIcon from 'assets/svg/close.svg'
-import { SvgIcon } from 'Components/SvgIcon'
+import { ReactComponent as CloseIcon } from "assets/svg/close.svg";
+import { SvgIcon } from "Components/SvgIcon";
 
-import { StyledButtonClose } from './ButtonClose.styled'
-import { ButtonCloseProps } from './ButtonClose.types'
+import { StyledButtonClose } from "./ButtonClose.styled";
+import { ButtonCloseProps } from "./ButtonClose.types";
 
 export const ButtonClose = ({
   color = COLOR.BLACK,
-  dataTestId = 'button-close',
+  dataTestId = "button-close",
   hoverColor = COLOR.GREY_550,
-  id = 'close-button',
+  id = "close-button",
   ...props
 }: ButtonCloseProps) => (
   <StyledButtonClose dataTestId={dataTestId} id={id} {...props}>
@@ -25,4 +24,4 @@ export const ButtonClose = ({
       <CloseIcon />
     </SvgIcon>
   </StyledButtonClose>
-)
+);
