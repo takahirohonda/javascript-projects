@@ -8,7 +8,6 @@ module.exports = {
     "@storybook/addon-essentials",
     "storybook-addon-apollo-client",
     "storybook-addon-pseudo-states",
-    "storybook-preset-inline-svg",
     "@storybook/preset-create-react-app",
   ],
   framework: "@storybook/react",
