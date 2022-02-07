@@ -1,15 +1,18 @@
 module.exports = {
-  "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
-  ],
-  "addons": [
+  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: [
+    "@storybook/addon-a11y",
     "@storybook/addon-links",
+    "@storybook/addon-actions",
+    "storybook-addon-designs",
     "@storybook/addon-essentials",
-    "@storybook/preset-create-react-app"
+    "storybook-addon-apollo-client",
+    "storybook-addon-pseudo-states",
+    "storybook-preset-inline-svg",
+    "@storybook/preset-create-react-app",
   ],
-  "framework": "@storybook/react",
-  "core": {
-    "builder": "webpack5"
-  }
-}
+  framework: "@storybook/react",
+  core: {
+    builder: "webpack5",
+  },
+};
