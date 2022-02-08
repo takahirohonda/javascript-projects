@@ -1,5 +1,5 @@
-import { COLOR, createFill, getColor } from 'utils'
 import styled, { css } from 'styled-components'
+import { COLOR, createFill, getColor } from 'utils'
 
 interface SvgIconProps {
   children: React.ReactNode
@@ -60,7 +60,7 @@ export const StyledContainer = styled.div<SvgIconProps>`
   }
 `
 
-export const SvgIcon = ({
+export function SvgIcon({
   children,
   color,
   backgroundColor,
@@ -76,25 +76,27 @@ export const SvgIcon = ({
   className,
   alt,
   ariaHidden,
-}: SvgIconProps) => (
-  <StyledContainer
-    color={color}
-    backgroundColor={backgroundColor}
-    className={className}
-    data-testid={dataTestId}
-    hoverColor={hoverColor}
-    height={height}
-    width={width}
-    withBorder={withBorder}
-    withCursor={withCursor}
-    withMargin={withMargin}
-    withMarginRight={withMarginRight}
-    withRotation={withRotation}
-    role="img"
-    alt={alt}
-    aria-label={alt}
-    aria-hidden={ariaHidden}
-  >
-    {children}
-  </StyledContainer>
-)
+}: SvgIconProps) {
+  return (
+    <StyledContainer
+      color={color}
+      backgroundColor={backgroundColor}
+      className={className}
+      data-testid={dataTestId}
+      hoverColor={hoverColor}
+      height={height}
+      width={width}
+      withBorder={withBorder}
+      withCursor={withCursor}
+      withMargin={withMargin}
+      withMarginRight={withMarginRight}
+      withRotation={withRotation}
+      role="img"
+      alt={alt}
+      aria-label={alt}
+      aria-hidden={ariaHidden}
+    >
+      {children}
+    </StyledContainer>
+  )
+}

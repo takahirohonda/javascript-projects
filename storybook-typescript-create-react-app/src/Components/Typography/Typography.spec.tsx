@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
-
 import { COLOR } from 'utils'
+
 import { Subtitle, Title } from './Typography'
 
 const checkElementColor = (id: string, color: string) => {

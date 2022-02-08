@@ -22,6 +22,7 @@ export interface ButtonBasicProps
   dataTestId?: string
   size?: BUTTON_SIZE
   isLoading?: boolean
+  fullWidth?: boolean
   loaderVariant?: LoaderVariant
   renderLoadingContent?: (renderProps: LoadingRenderProps) => React.ReactNode
 }

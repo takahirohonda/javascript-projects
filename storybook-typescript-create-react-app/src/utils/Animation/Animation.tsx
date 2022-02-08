@@ -11,14 +11,14 @@ interface AnimationProps {
   onTransitionEnd?: () => void
 }
 
-export const Animation = ({
+export function Animation({
   variants,
   children,
   shouldShow = true,
   style,
   onExitComplete,
   onTransitionEnd,
-}: AnimationProps) => {
+}: AnimationProps) {
   return (
     <AnimatePresence exitBeforeEnter onExitComplete={onExitComplete}>
       {shouldShow && (

@@ -12,11 +12,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export const LoaderWrapper = ({
-  isLoading,
-  loaderVariant,
-  children,
-}: Props) => {
+export function LoaderWrapper({ isLoading, loaderVariant, children }: Props) {
   return (
     <StyledWrapper>
       <StyledButtonContent data-testid="button-content" $loading={isLoading}>

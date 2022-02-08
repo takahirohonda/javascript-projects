@@ -9,6 +9,7 @@ export default {
   component: ButtonCloseComponent,
 }
 
+/* eslint-disable react/function-component-definition */
 const ButtonCloseTemplate: Story<ButtonCloseProps> = (args) => (
   <ButtonCloseComponent {...args} />
 )
