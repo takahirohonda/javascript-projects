@@ -1,9 +1,10 @@
+import { BodyDefaultTypography } from 'Components/Typography'
 import styled, { css, keyframes } from 'styled-components'
+import { COLOR, getColor } from 'utils'
 
 import LoaderDark from 'assets/svg/loader-small.svg'
 import LoaderLight from 'assets/svg/loader-small-light.svg'
-import { COLOR, getColor } from 'utils'
-import { BodyDefaultTypography } from '../../Typography'
+
 import {
   BUTTON_SIZE,
   ButtonBasicPadding,

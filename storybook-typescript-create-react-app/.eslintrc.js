@@ -39,13 +39,13 @@ module.exports = {
     'import',
     'jsx-a11y',
     'simple-import-sort',
-    'zeller',
+    'custom',
   ],
   rules: {
-    'zeller/ban-parse-float': 2,
-    'zeller/force-typed-api-requests': 2,
-    'zeller/ban-raw-apollo-use-subscription': 2,
-    'zeller/styled-components-naming': 2,
+    'custom/ban-parse-float': 2,
+    'custom/force-typed-api-requests': 2,
+    'custom/ban-raw-apollo-use-subscription': 2,
+    'custom/styled-components-naming': 2,
     'react/react-in-jsx-scope': 0,
     // note we must disable the base rule as it can report incorrect errors
     'no-use-before-define': 'off',
@@ -120,13 +120,13 @@ module.exports = {
     {
       files: ['src/const/envs.ts'],
       rules: {
-        'zeller/double-snake-on-feature-flag': 2,
+        'custom/double-snake-on-feature-flag': 2,
       },
     },
     {
       files: ['src/graphql/reactiveVariables/*.ts'],
       rules: {
-        'zeller/reactive-var-naming': 2,
+        'custom/reactive-var-naming': 2,
       },
     },
     {

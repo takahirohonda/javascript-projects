@@ -19,7 +19,7 @@ export default create({
   inputTextColor: 'black',
   inputBorderRadius: 4,
 
-  brandTitle: 'Zeller Design System',
-  brandUrl: 'https://www.myzeller.com/',
+  brandTitle: 'Example Design System',
+  brandUrl: 'https://www.mydatahack.com/',
   brandImage: 'logos/zeller_logo_white.svg',
 })

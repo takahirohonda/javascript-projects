@@ -9,6 +9,7 @@ export default {
   component: ButtonBasicComponent,
 }
 
+/* eslint-disable react/function-component-definition */
 const ButtonBasicTemplate: Story<ButtonBasicProps> = (args) => (
   <ButtonBasicComponent {...args} />
 )

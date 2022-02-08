@@ -3,6 +3,8 @@ interface Props {
   shouldShow?: boolean
 }
 
-export const Animation = ({ children, shouldShow = true }: Props) => (
-  <>{shouldShow && children}</>
-)
+/* eslint-disable react/jsx-no-useless-fragment */
+
+export function Animation({ children, shouldShow = true }: Props) {
+  return <>{shouldShow && children}</>
+}

@@ -1,5 +1,5 @@
-import { COLOR, getColor } from 'utils'
 import styled from 'styled-components'
+import { COLOR, getColor } from 'utils'
 
 import { ButtonBasic } from '../ButtonBasic/ButtonBasic'
 
