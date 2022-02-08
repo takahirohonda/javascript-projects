@@ -42,9 +42,11 @@ export default {
   output: [
     {
       dir: "dist",
+      // file: "dist/index.esm.js",
       format: "esm",
       sourcemap: false,
       preserveModules: true,
+      preserveModulesRoot: "src",
     },
   ],
   external: [...Object.keys(pkg.dependencies || {})],

@@ -9,3 +9,5 @@ yarn create react-app storybook-typescript-create-react-app --template typescrip
 cd storybook-typescript-create-react-app
 npx sb init
 ```
+
+yarn create react-app test-fec-library-create-react-app --template typescript
