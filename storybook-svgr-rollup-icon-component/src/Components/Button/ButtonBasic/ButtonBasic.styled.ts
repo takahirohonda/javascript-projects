@@ -2,14 +2,20 @@ import { BodyDefaultTypography } from 'Components/Typography'
 import styled, { css, keyframes } from 'styled-components'
 import { COLOR, getColor } from 'utils'
 
-import LoaderDark from 'assets/svg/loader-small.svg'
-import LoaderLight from 'assets/svg/loader-small-light.svg'
+// import LoaderDark from '../../assets/svg/loader-small.svg'
+import LoaderDark from '../../../../assets/svg/loader-small.svg'
+import LoaderLight from '../../../../assets/svg/loader-small-light.svg'
 
 import {
   BUTTON_SIZE,
   ButtonBasicPadding,
   LoaderVariant,
 } from './ButtonBasic.types'
+
+/**
+ * In storybook, this is transformed into a string (static/media/loader-small.1794382393f263748b69ec554212563f.svg)
+ */
+console.log(LoaderDark)
 
 const buttonPadding: ButtonBasicPadding = {
   [BUTTON_SIZE.LARGE]: '14px 24px',

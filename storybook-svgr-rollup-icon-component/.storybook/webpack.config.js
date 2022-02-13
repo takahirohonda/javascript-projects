@@ -6,15 +6,15 @@ module.exports = async ({ config }) => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../src/assets/fonts'),
+          from: path.resolve(__dirname, '../assets/fonts'),
           to: 'fonts',
         },
         {
-          from: path.resolve(__dirname, '../src/assets/favicons'),
+          from: path.resolve(__dirname, '../assets/favicons'),
           to: 'favicons',
         },
         {
-          from: path.resolve(__dirname, '../src/assets/logos'),
+          from: path.resolve(__dirname, '../assets/logos'),
           to: 'logos',
         },
       ],
