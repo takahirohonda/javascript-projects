@@ -50,10 +50,10 @@ export default {
     }),
     resolve(),
     commonjs(),
-    // svgr({
-    //   // process SVG to DOM Node or String. Default: false
-    //   stringify: false,
-    // }),
+    svgr({
+      // process SVG to DOM Node or String. Default: false
+      stringify: false,
+    }),
     url(),
     ...nodeModulePlugins,
     Boolean(process.env.ANALYZE) &&
