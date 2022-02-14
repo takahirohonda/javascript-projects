@@ -1,3 +1,4 @@
+```js
 /* eslint-disable import/no-extraneous-dependencies */
 import commonjs from '@rollup/plugin-commonjs'
 import renameNodeModules from 'rollup-plugin-rename-node-modules'
@@ -14,9 +15,11 @@ import { visualizer } from 'rollup-plugin-visualizer'
 
 import pkg from './package.json'
 
+// This is for testing out all the plugins to handle svg imports
+
 /**
  * The build currently includes node_modules: https://github.com/rollup/rollup/issues/3684
- * isolateModules can't tell that node_modules is special, and postcss auto includes a module to inject styles
+ * isolateModules can't tell that node_modules is special
  * we include a vendor dir for this included module to ensure it gets included
  */
 
@@ -32,9 +35,7 @@ const nodeModulePlugins = [
 ]
 
 /**
- * TODO: Fix tree shaking
- * Unless you import via the explicit path, it imports all the styles in the library
- * So the compiled build for a react app goes up to 2.9M, when it could be 660kb
+ * TODO: Maybe tree shaking, but probably it's ok??
  */
 
 export default {
@@ -83,3 +84,4 @@ export default {
       }),
   ],
 }
+```
