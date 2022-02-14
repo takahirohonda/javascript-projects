@@ -1,8 +1,8 @@
 import { SvgIcon } from 'Components/SvgIcon'
 import { COLOR } from 'utils'
 
-// import { ReactComponent as CloseIcon } from '../../../../assets/svg/close.svg'
-import { CloseIcon } from 'Components/Svg/CloseIcon'
+import { ReactComponent as CloseIcon } from '../../../../assets/svg/close.svg'
+// import { CloseIcon } from 'Components/Svg/CloseIcon'
 
 import { StyledButtonClose } from './ButtonClose.styled'
 import { ButtonCloseProps } from './ButtonClose.types'
