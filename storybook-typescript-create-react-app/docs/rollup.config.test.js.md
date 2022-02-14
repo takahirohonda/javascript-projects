@@ -1,14 +1,21 @@
+```js
 /* eslint-disable import/no-extraneous-dependencies */
 import commonjs from '@rollup/plugin-commonjs'
 import renameNodeModules from 'rollup-plugin-rename-node-modules'
 import rename from 'rollup-plugin-rename'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
+// import svg from 'rollup-plugin-svg-import'
+// import replace from '@rollup/plugin-replace'
+// import image from '@rollup/plugin-image'
 import svgr from '@svgr/rollup'
 import url from '@rollup/plugin-url'
+// import { baseUrl } from 'rollup-plugin-base-url'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 import pkg from './package.json'
+
+// This is for testing out all the plugins to handle svg imports
 
 /**
  * The build currently includes node_modules: https://github.com/rollup/rollup/issues/3684
@@ -36,6 +43,7 @@ export default {
   output: [
     {
       dir: 'dist',
+      // file: "dist/index.esm.js",
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
@@ -44,10 +52,22 @@ export default {
   ],
   external: [...Object.keys(pkg.dependencies || {})],
   plugins: [
+    // baseUrl({
+    //   url: "./src",
+    //   staticImports: true,
+    // }),
+
     typescript({
       sourceMap: false,
       exclude: ['**/*.(test|spec).(ts|tsx)'], // don't generate *.d.ts files
     }),
+    // replace({
+    //   include: ["./**/*.ts"],
+    //   preventAssignment: true,
+    //   // Replace ReactComponent to allow resolution of SVG files under Rollup
+    //   ReactComponent: "default",
+    // }),
+    // image(),
     resolve(),
     commonjs(),
     svgr({
@@ -64,3 +84,4 @@ export default {
       }),
   ],
 }
+```

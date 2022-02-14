@@ -1,0 +1,74 @@
+{
+  "name": "storybook-typescript-create-react-app",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "private": true,
+  "dependencies": {
+    "framer-motion": "^6.2.4",
+    "styled-components": "^5.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build-react-scripts": "react-scripts build",
+    "test": "TZ=UTC react-scripts test --watchAll=false --env=jsdom --no-cache --restoreMocks --runInBand --forceExit",
+    "test:coverage": "TZ=UTC react-scripts test --coverage --watchAll=false --env=jsdom --no-cache --restoreMocks --runInBand --forceExit",
+    "test:dev": "TZ=UTC react-scripts test --watchAll=false --env=jsdom --no-cache --restoreMocks",
+    "test:watch": "TZ=UTC react-scripts test --env=jsdom --no-cache",
+    "test:changed": "TZ=UTC react-scripts test --env=jsdom --no-cache -o --silent",
+    "lint": "eslint --ext js,jsx,ts,tsx src/",
+    "svgr": "svgr --icon --title-prop -d src assets",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -s public",
+    "build:svgr": "yarn clean ; yarn svgr ; rollup -c rollup.config.js",
+    "build": "yarn clean ; rollup -c rollup.config.js",
+    "analyse:package": "yarn clean ; export ANALYZE=true || set ANALYZE=true&&rollup -c rollup.config.js",
+    "clean": "rimraf dist",
+    "type-check": "tsc --noEmit",
+    "compile": "yarn clean ; tsc --outDir dist"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": "pretty-quick --staged",
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --ext js,jsx,ts,tsx"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": "^14.15.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn type-check && yarn test --silent"
+    }
+  },
+  "devDependencies": {}
+}
