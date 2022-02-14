@@ -76,6 +76,12 @@ module.exports = {
         img: ['ExpertImage'],
       },
     ],
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: ['arrow-function', 'function-declaration'],
+      },
+    ],
     'import/extensions': [
       'error',
       'ignorePackages',

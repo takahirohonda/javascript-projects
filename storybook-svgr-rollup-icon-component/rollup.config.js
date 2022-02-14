@@ -7,7 +7,7 @@ import typescript from '@rollup/plugin-typescript'
 // import svg from 'rollup-plugin-svg-import'
 // import replace from '@rollup/plugin-replace'
 // import image from '@rollup/plugin-image'
-// import svgr from '@svgr/rollup'
+import svgr from '@svgr/rollup'
 import url from '@rollup/plugin-url'
 // import { baseUrl } from 'rollup-plugin-base-url'
 import { visualizer } from 'rollup-plugin-visualizer'
@@ -69,10 +69,10 @@ export default {
     // image(),
     resolve(),
     commonjs(),
-    // svgr({
-    //   // process SVG to DOM Node or String. Default: false
-    //   stringify: false,
-    // }),
+    svgr({
+      // process SVG to DOM Node or String. Default: false
+      stringify: false,
+    }),
     url(),
     ...nodeModulePlugins,
     Boolean(process.env.ANALYZE) &&
