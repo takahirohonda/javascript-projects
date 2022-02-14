@@ -7,8 +7,8 @@ import typescript from '@rollup/plugin-typescript'
 // import svg from 'rollup-plugin-svg-import'
 // import replace from '@rollup/plugin-replace'
 // import image from '@rollup/plugin-image'
-// import svgr from '@svgr/rollup'
-// import url from '@rollup/plugin-url'
+import svgr from '@svgr/rollup'
+import url from '@rollup/plugin-url'
 // import { baseUrl } from 'rollup-plugin-base-url'
 import { visualizer } from 'rollup-plugin-visualizer'
 
@@ -16,7 +16,7 @@ import pkg from './package.json'
 
 /**
  * The build currently includes node_modules: https://github.com/rollup/rollup/issues/3684
- * isolateModules can't tell that node_modules is special, and postcss auto includes a module to inject styles
+ * isolateModules can't tell that node_modules is special
  * we include a vendor dir for this included module to ensure it gets included
  */
 
@@ -69,11 +69,11 @@ export default {
     // image(),
     resolve(),
     commonjs(),
-    // svgr({
-    //   // process SVG to DOM Node or String. Default: false
-    //   stringify: false,
-    // }),
-    // url(),
+    svgr({
+      // process SVG to DOM Node or String. Default: false
+      stringify: false,
+    }),
+    url(),
     ...nodeModulePlugins,
     Boolean(process.env.ANALYZE) &&
       visualizer({

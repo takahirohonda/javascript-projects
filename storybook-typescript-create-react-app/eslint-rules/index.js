@@ -3,7 +3,6 @@
 module.exports = {
   rules: {
     'double-snake-on-feature-flag': require('./DoubleSnakeOnFeatureFlag.js'),
-    'reactive-var-naming': require('./ReactiveVariablesNaming.js'),
     'ban-raw-apollo-use-subscription': require('./BanRawApolloUseSubscription.js'),
     'ban-parse-float': require('./BanParseFloat.js'),
     'force-typed-api-requests': require('./ForceTypedApiRequests.js'),

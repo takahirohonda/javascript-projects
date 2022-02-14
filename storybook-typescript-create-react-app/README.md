@@ -1,6 +1,6 @@
-# React Storybook with TypeScript
+# Storybook Typescript with create-react-app
 
-This project was created by `create-react-app`.
+This project is based on `../storybook-typescript-create-react-app`. It was created by `create-react-app`.
 
 ```bash
 # Create typescript react project
