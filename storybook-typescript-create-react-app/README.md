@@ -17,10 +17,20 @@ Setting up semantic release
 1. Install
 
 ```bash
-yarn add commitlint semantic-release @semantic-release/changelog @semantic-release/git -D
+yarn add commitlint commitizen semantic-release @semantic-release/changelog @semantic-release/git -D
 ```
 
 2. Add files
 
+```
 .czrc
 .releaserc.js
+```
+
+3. Add commit script to `package.json`
+
+```json
+"scripts": {
+    "commit": "cz",
+}
+```
