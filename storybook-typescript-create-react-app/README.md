@@ -9,3 +9,18 @@ yarn create react-app storybook-typescript-create-react-app --template typescrip
 cd storybook-typescript-create-react-app
 npx sb init
 ```
+
+# Appendix
+
+Setting up semantic release
+
+1. Install
+
+```bash
+yarn add commitlint semantic-release @semantic-release/changelog @semantic-release/git -D
+```
+
+2. Add files
+
+.czrc
+.releaserc.js
