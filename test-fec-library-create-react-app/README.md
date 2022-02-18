@@ -81,3 +81,9 @@ yarn add https://npm.pkg.github.com/npm/@mydatahack/mdh-design-system-storybook@
 taka@192-168-1-110 test-fec-library-create-react-app % npm i @mdhnpm/cube-loading-spinner --registry https://npm.pkg.github.com
 npm ERR! code E401
 npm ERR! Unable to authenticate, need: Basic realm="GitHub Package Registry"
+
+git+ssh://git@github.com:estimateone/frontend-components.git#9.4.1
+
+git+ssh://git@github.com:mydatahack/mdh-design-system-storybook#1.4.0
+
+git+ssh://git@github.com:mdhnpm/cube-loading-spinner #1.4.0
