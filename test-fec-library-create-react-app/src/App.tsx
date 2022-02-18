@@ -1,9 +1,9 @@
-import React from "react";
+// import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { ButtonClose, ButtonBasic } from "afec";
-// import { ButtonClose, ButtonBasic } from "./fec";
 import Select from "react-select";
+import { CubeLoadingSpinner } from "@mdhnpm/cube-loading-spinner";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <ButtonBasic>Hello Button Basic</ButtonBasic>
         <ButtonBasic isLoading={true}>Hello Button Basic</ButtonBasic>
         <Select></Select>
+        <CubeLoadingSpinner />
       </header>
     </div>
   );
