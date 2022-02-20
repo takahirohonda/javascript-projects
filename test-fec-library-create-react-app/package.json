@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "mdh-design-system-storybook": "git+ssh://git@github.com:mydatahack/mdh-design-system-storybook#1.4.0",
+    "@mdhnpm/cube-loading-spinner": "git+ssh://git@github.com:mdhnpm/cube-loading-spinner.git#1.5.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",

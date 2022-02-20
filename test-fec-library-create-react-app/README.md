@@ -72,18 +72,32 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 yarn create react-app test-fec-library-create-react-app --template typescript
 ```
 
-# in progress troubleshooting
+# Installing package from github npm repository
 
-yarn --registry https://npm.pkg.github.com
+Doc here (https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry).
 
+I cannot get `yarn add` command to work. Not really sure how ot install npm package from git...
+
+```bash
+# Add registories in .npmrc - this one doesn't work....
+yarn add @mdhnpm/cube-loading-spinner
+yarn add @mydatahack/mdh-design-system-storybook
+
+# Manually add registory and install - this one doesn't work, either...
+yarn add @mdhnpm/cube-loading-spinner --registry https://npm.pkg.github.com
+
+# Try with npm command
+npm i @mdhnpm/cube-loading-spinner --registry https://npm.pkg.github.com
+
+# Try with full github url
 yarn add https://npm.pkg.github.com/npm/@mydatahack/mdh-design-system-storybook@1.4.0
+```
 
-taka@192-168-1-110 test-fec-library-create-react-app % npm i @mdhnpm/cube-loading-spinner --registry https://npm.pkg.github.com
-npm ERR! code E401
-npm ERR! Unable to authenticate, need: Basic realm="GitHub Package Registry"
+Trying to add to `package.json`. It works, however, this only pulls the repo from the git. It doesn't really install the bundled package.
 
-git+ssh://git@github.com:estimateone/frontend-components.git#9.4.1
-
-git+ssh://git@github.com:mydatahack/mdh-design-system-storybook#1.4.0
-
-git+ssh://git@github.com:mdhnpm/cube-loading-spinner #1.4.0
+```json
+"dependencies": {
+    "@mydatahack/mdh-design-system-storybook": "git+ssh://git@github.com:mydatahack/mdh-design-system-storybook.git#1.4.0",
+    "@mdhnpm/cube-loading-spinner": "git+ssh://git@github.com:mdhnpm/cube-loading-spinner.git#1.5.0",
+}
+```
