@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 // import { TestFedComponents } from "./TestFedComponents";
 import Select from "react-select";
-import { CubeLoadingSpinner } from "@mdhnpm/cube-loading-spinner";
+import { CubeLoadingSpinner } from "@mdhnpm/react-cube-loading-spinner";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <CubeLoadingSpinner
           mainColor="pink"
           secondaryColor="purple"
-          spinnerWidth="34px"
+          spinnerWidth="32px"
           spinnerSpeed="2s"
         />
       </header>
