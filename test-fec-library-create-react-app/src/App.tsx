@@ -10,9 +10,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Testing libraries</h1>
-
         <Select></Select>
-        <CubeLoadingSpinner />
+        <CubeLoadingSpinner
+          mainColor="pink"
+          secondaryColor="purple"
+          spinnerWidth="34px"
+          spinnerSpeed="2s"
+        />
       </header>
     </div>
   );
