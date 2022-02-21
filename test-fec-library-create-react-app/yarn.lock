@@ -1652,9 +1652,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mdhnpm/cube-loading-spinner@git+ssh://git@github.com:mdhnpm/cube-loading-spinner.git#1.5.0":
-  version "1.5.0"
-  resolved "git+ssh://git@github.com:mdhnpm/cube-loading-spinner.git#508567c3dfbefbf7535244d4f6a6ffe8e9b6629b"
+"@mdhnpm/cube-loading-spinner@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@mdhnpm/cube-loading-spinner/-/cube-loading-spinner-1.6.1.tgz#91e80ed1ee47eafdf0f43d1184e758b5a7df9c92"
+  integrity sha512-lg3nSorp/bAoBU5PLOTqVmH3KinhSH9rC8rATQjX5MKK9dK35QpjxwYTTPuOOva/u0t/o6TDdKQjtLkAZ0VWKA==
   dependencies:
     react "^17.0.2"
     react-dom "^17.0.2"
