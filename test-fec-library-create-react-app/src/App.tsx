@@ -14,8 +14,8 @@ function App() {
         <CubeLoadingSpinner
           mainColor="pink"
           secondaryColor="purple"
-          spinnerWidth="32px"
-          spinnerSpeed="2s"
+          spinnerInnerHeight={10}
+          spinnerSpeed={1.5}
         />
       </header>
     </div>
