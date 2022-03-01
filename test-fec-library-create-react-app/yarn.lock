@@ -1652,10 +1652,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mdhnpm/react-cube-loading-spinner@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@mdhnpm/react-cube-loading-spinner/-/react-cube-loading-spinner-2.1.0.tgz#3de4d22f9811a41b397458a50add83279e0c1b61"
-  integrity sha512-ntQOwCoRel07byiNNzdgYZtE5EJc5gBs6NO7/zplAu0CdcVXvrAPB8VnSloixG1AqrDj3OhyqlvwCWfAMPSb8Q==
+"@mdhnpm/react-cube-loading-spinner@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@mdhnpm/react-cube-loading-spinner/-/react-cube-loading-spinner-2.1.1.tgz#1eaaf0eecf66654d19d04d07882326efb8ee661e"
+  integrity sha512-Up/3HQXsdUFbhePrV4e2amT4WBKy8by00JCAskeSQbe+rq7nXXFbThc8WQ52ikbzaJL+DKAdP2t1Z4ryRUIrgg==
   dependencies:
     react "^17.0.2"
     react-dom "^17.0.2"
