@@ -39,7 +39,8 @@
     "clean": "rimraf dist",
     "type-check": "tsc --noEmit",
     "compile": "yarn clean ; tsc --outDir dist",
-    "commit": "cz"
+    "commit": "cz",
+    "parcel:bundle": "parcel build ./src/index.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json}": "pretty-quick --staged",
@@ -77,12 +78,6 @@
   },
   "engines": {
     "node": "^14.15.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn type-check && yarn test --silent"
-    }
   },
   "devDependencies": {
     "@apollo/client": "^3.5.8",
@@ -123,6 +118,7 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "husky": "4.3.8",
     "lint-staged": "12.0.2",
+    "parcel-bundler": "^1.12.5",
     "prettier": "2.2.1",
     "pretty-quick": "3.1.1",
     "rollup": "^2.67.1",

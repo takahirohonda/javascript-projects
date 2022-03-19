@@ -36,8 +36,8 @@ yarn add gatsby-plugin-sass gatsby-plugin-scss-typescript node-sass --dev
 # mdx support
 yarn add gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react --dev
 
-# enzyme-adapter-react-17 is not availble yet...
-# when it is updated 
+# enzyme-adapter-react-17 is not available yet...
+# when it is updated
 yarn add enzyme-adapter-react-16 @types/enzyme-adapter-react-16 --dev
 # for now, use unofficial one
 yarn add @wojtekmaj/enzyme-adapter-react-17 --dev
@@ -70,9 +70,10 @@ yarn add eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y
   - markdown
   - pages
   - styles # add global style imported in gatsby-browser.ts
-    - global.scss 
+    - global.scss
   - templates
 ```
+
 # Gatsby TypeScript Development
 
 ### (1) Pages
@@ -101,7 +102,7 @@ From Gatsby 3, import statement has to be `import * as styles from ...`.
 
 Create a folder called `style` in `src`. Then, create a file called `gatsby-browser.js` in the root folder and add import statement.
 
-<strong>3. Quering Data with GraphQL</strong>
+<strong>3. Querying Data with GraphQL</strong>
 
 There are two types of GraphQL queries.
 
@@ -123,9 +124,9 @@ Then go to `localhost:8000/_graphiql` and now we can query the data.
 
 ```graphql
 {
-	site {
-		siteMetadata {
-			title
+  site {
+    siteMetadata {
+      title
     }
   }
 }
@@ -145,10 +146,10 @@ The plugin brings new graphql that wasn't available before.
 
 ```graphql
 {
-	allFile {
-		edges {
-			node {
-				id
+  allFile {
+    edges {
+      node {
+        id
       }
     }
   }
@@ -159,7 +160,7 @@ We can transform the data by the second plugin.
 
 ```graphql
 {
-  allMarkdownRemark(sort: {fields: [frontmatter___data], order: DESC}) {
+  allMarkdownRemark(sort: { fields: [frontmatter___data], order: DESC }) {
     totalCount
     edges {
       node {
@@ -180,29 +181,27 @@ We can transform the data by the second plugin.
 
 Create `markdown` folder in `src` and add markdown file.
 
-
-
 # GraphQL Queries
 
 ```graphql
 query getpost {
-  markdownRemark(fields: { slug: { eq: "/welcome/"}}) {
+  markdownRemark(fields: { slug: { eq: "/welcome/" } }) {
     html
     frontmatter {
-			title
+      title
       keyword
     }
   }
 }
 
 query second {
-	file {
-		absolutePath
+  file {
+    absolutePath
   }
 }
 
 query getArticle {
-  allMarkdownRemark(sort: {fields: [frontmatter___data], order: DESC}) {
+  allMarkdownRemark(sort: { fields: [frontmatter___data], order: DESC }) {
     totalCount
     edges {
       node {

@@ -13,7 +13,7 @@ There are a few things I am not sure about...
 - Not sure how to add custom file names for dist files. We can only rename entry file by using `-o` argument (as in `parcel build ./src/index.html -o parcel.html`), but not the js files.
 
 - Not sure how to clear the dist folder
-  - If I add Linux script, it clears the folder, but it keeps adding the same file name. I think parcel has a way to add different build number according to the exisiting files in the dist folder `rm -rf dist && parcel build ./src/index.html`.
+  - If I add Linux script, it clears the folder, but it keeps adding the same file name. I think parcel has a way to add different build number according to the existing files in the dist folder `rm -rf dist && parcel build ./src/index.html`.
 
 ## Reference
 
@@ -24,8 +24,8 @@ yarn add react react-dom
 
 yarn add typescript @types/react @types/react-dom eslint jest ts-jest enzyme @types/jest @types/enzyme --dev
 
-# enzyme-adapter-react-17 is not availble yet...
-# when it is updated 
+# enzyme-adapter-react-17 is not available yet...
+# when it is updated
 yarn add enzyme-adapter-react-16 @types/enzyme-adapter-react-16 --dev
 # for now, use unofficial one
 yarn add @wojtekmaj/enzyme-adapter-react-17 --dev

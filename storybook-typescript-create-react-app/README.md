@@ -34,3 +34,17 @@ yarn add commitlint commitizen semantic-release @semantic-release/changelog @sem
     "commit": "cz",
 }
 ```
+
+## Husky hook
+
+If we need to add husky hook, add it in `package.json`. For now, we removed it.
+
+```json
+
+"husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn type-check"
+    }
+  },
+```
