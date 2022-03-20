@@ -1,3 +1,5 @@
+// This will include react because rollup include node_modules when the path is added.
+// import { forwardRef } from 'react/index'
 import { forwardRef } from 'react'
 
 import { StyledButton } from './ButtonBasic.styled'
@@ -7,6 +9,8 @@ import {
   LoaderVariant,
 } from './ButtonBasic.types'
 import { LoaderWrapper } from './LoaderWrapper'
+// This doesn't cause packaging unnecessary dependencies.
+import * as helper from './rollupCircularDependencyTest'
 
 export const ButtonBasic = forwardRef<HTMLButtonElement, ButtonBasicProps>(
   (
@@ -29,6 +33,7 @@ export const ButtonBasic = forwardRef<HTMLButtonElement, ButtonBasicProps>(
       size={size}
       type={type}
       disabled={disabled || isLoading}
+      onClick={() => helper.testingRollupCircularDependencies()}
       {...props}
     >
       {renderLoadingContent({ isLoading, loaderVariant, children })}
