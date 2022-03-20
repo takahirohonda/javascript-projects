@@ -42,7 +42,7 @@ export default {
       preserveModulesRoot: 'src',
     },
   ],
-  external: [...Object.keys(pkg.dependencies || {})],
+  external: [...Object.keys(pkg.dependencies || {}), 'react/jsx-runtime'],
   plugins: [
     typescript({
       sourceMap: false,
