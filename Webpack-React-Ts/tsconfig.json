@@ -6,24 +6,24 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es2015",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "resolveJsonModule": true,
-    "skipLibCheck" : true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@estimateone/frontend-components": ["node_modules/@estimateone/frontend-components/index.ts"],
+      "@mdh/frontend-components": [
+        "node_modules/@mdh/frontend-components/index.ts"
+      ],
       "routing": ["webpack/routing.ts"]
     }
   },
-  "include" : [
-      "./src/**/*"
-  ],
-  "exclude" : [
-      "./src/**/tests/**/*",
-      "node_modules",
-      "mock-server",
-      "./src/form-components/FileUploader/*",
-      "./src/utils/helpers.ts"
+  "include": ["./src/**/*"],
+  "exclude": [
+    "./src/**/tests/**/*",
+    "node_modules",
+    "mock-server",
+    "./src/form-components/FileUploader/*",
+    "./src/utils/helpers.ts"
   ]
 }
