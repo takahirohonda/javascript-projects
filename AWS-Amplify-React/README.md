@@ -1,5 +1,15 @@
 # AWS Amplify React Application
 
+## Frontend
+
+1. Code gen
+
+```bash
+# Generates graphql files and src/API.ts
+amplify configure codegen
+
+```
+
 ## (1) Deploying API
 
 We can update `amplify/backend/api/awsamplifyreacttest/schema.graphql` and do push.
@@ -57,3 +67,21 @@ Installing `aws-amplify` and ui lib.
 ```bash
 yarn add aws-amplify @aws-amplify/ui-react
 ```
+
+Setting up Apollo
+
+1. Installation
+
+```bash
+yarn add @apollo/client graphql
+yarn add -D @graphql-codegen/cli @graphql-codegen/typescript
+```
+
+2. Initialise graphql-codegen
+
+see: https://graphql-code-generator.com/docs/getting-started/installation
+
+```bash
+yarn graphql-codegen init
+```
+
