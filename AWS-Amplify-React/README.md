@@ -8,6 +8,11 @@
 # Generates graphql files and src/API.ts
 amplify configure codegen
 
+# generate
+amplify codegen
+
+# generate type files (using apollo)
+yarn gql-typings
 ```
 
 ## (1) Deploying API
@@ -66,22 +71,5 @@ Installing `aws-amplify` and ui lib.
 
 ```bash
 yarn add aws-amplify @aws-amplify/ui-react
-```
-
-Setting up Apollo
-
-1. Installation
-
-```bash
-yarn add @apollo/client graphql
-yarn add -D @graphql-codegen/cli @graphql-codegen/typescript
-```
-
-2. Initialise graphql-codegen
-
-see: https://graphql-code-generator.com/docs/getting-started/installation
-
-```bash
-yarn graphql-codegen init
 ```
 
