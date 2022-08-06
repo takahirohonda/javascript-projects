@@ -19,3 +19,24 @@ see: https://graphql-code-generator.com/docs/getting-started/installation
 yarn graphql-codegen init
 ```
 
+
+```json
+{
+  "scripts": {
+    "gql-schema": "apollo schema:download --endpoint=put_endpoint_here graphql-schema.json --header='Authorization: put_token_here'",
+
+    "gql-typings": "apollo codegen:generate --localSchemaFile=graphql-schema.json,local-schema.graphql --target=typescript --includes=src/graphql/merchant-portal/**/*.ts,src/pages/**/*.tsx,src/pages/**/*.ts,src/components/**/*.tsx,src/components/**/*.ts --excludes=src/graphql/merchant-portal/local/** --no-addTypename --globalTypesFile=src/types/gql-global-types.ts --outputFlat src/types/gql-types",
+
+    "gql-update": "yarn gql-typings && prettier --write src/types/**"
+  }
+}
+```
+
+```bash
+apollo client:codegen types --addTypename --globalTypesFile=src/components/$SCHEMA/types/global.ts --passthroughCustomScalars --customScalarsPrefix=GraphQL --target=typescript --config=apollo.config.$SCHEMA.js
+```
+
+```json
+
+"gql-typings": "apollo codegen:generate --localSchemaFile=src/graphql/schema.json --target=typescript --includes=src/**/*.ts,src/**/*.tsx --no-addTypename --globalTypesFile=src/types/gql-global-types.ts --outputFlat src/types/gql-types",
+```

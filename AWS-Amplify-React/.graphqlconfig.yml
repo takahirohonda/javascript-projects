@@ -1,8 +1,9 @@
 projects:
   awsamplifyreacttest:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/awsamplifyreacttest/build/schema.graphql
     includes:
       - src/graphql/**/*.ts
+      - src/components/**/*.ts
     excludes:
       - ./amplify/**
     extensions:
@@ -10,6 +11,8 @@ projects:
         codeGenTarget: typescript
         generatedFileName: src/API.ts
         docsFilePath: src/graphql
+        region: ap-southeast-2
+        apiId: null
         maxDepth: 2
 extensions:
   amplify:
