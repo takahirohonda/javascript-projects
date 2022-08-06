@@ -2,7 +2,9 @@
 
 ## Frontend
 
-1. Code gen
+1. Codegen
+
+`amplify` can generate `API.ts`. We're opting to use `apollo cli` for type file generation because they are nicer although it gives us deprecated warnings. `graphql-codegen` seems to generate the types similar to `amplify generate`. Not sure if it is a new and better way forawrds. I feel like it is nice to generates files per query with interface without nested types as `amplify generate` does.
 
 ```bash
 # Generates graphql files and src/API.ts
@@ -49,11 +51,8 @@ amplify delete
 amplify status
 
 # To change config in case we have AccessDenied error
-mplify configure project
+amplify configure project
 ```
-
-# temp
-
 
 # Reference
 

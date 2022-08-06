@@ -287,6 +287,11 @@ export type UpdateTodoInput = {
   name?: InputMaybe<Scalars['String']>;
 };
 
+export type GetToDoListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetToDoListQuery = { __typename?: 'Query', listTodos?: { __typename?: 'ModelTodoConnection', items: Array<{ __typename?: 'Todo', id: string, description?: string | null, createdAt: any, name: string } | null> } | null };
+
 export type CreateTodoMutationVariables = Exact<{
   input: CreateTodoInput;
   condition?: InputMaybe<ModelTodoConditionInput>;
@@ -325,7 +330,7 @@ export type ListTodosQueryVariables = Exact<{
 }>;
 
 
-export type ListTodosQuery = { __typename?: 'Query', listTodos?: { __typename?: 'ModelTodoConnection', nextToken?: string | null, items: Array<{ __typename?: 'Todo', id: string, name: string, description?: string | null, createdAt: any, updatedAt: any } | null> } | null };
+export type ListTodosQuery = { __typename?: 'Query', listTodos?: { __typename?: 'ModelTodoConnection', nextToken?: string | null } | null };
 
 export type OnCreateTodoSubscriptionVariables = Exact<{
   filter?: InputMaybe<ModelSubscriptionTodoFilterInput>;
@@ -349,6 +354,45 @@ export type OnDeleteTodoSubscriptionVariables = Exact<{
 export type OnDeleteTodoSubscription = { __typename?: 'Subscription', onDeleteTodo?: { __typename?: 'Todo', id: string, name: string, description?: string | null, createdAt: any, updatedAt: any } | null };
 
 
+export const GetToDoListDocument = gql`
+    query GetToDoList {
+  listTodos {
+    items {
+      id
+      description
+      createdAt
+      name
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetToDoListQuery__
+ *
+ * To run a query within a React component, call `useGetToDoListQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetToDoListQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetToDoListQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetToDoListQuery(baseOptions?: Apollo.QueryHookOptions<GetToDoListQuery, GetToDoListQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetToDoListQuery, GetToDoListQueryVariables>(GetToDoListDocument, options);
+      }
+export function useGetToDoListLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetToDoListQuery, GetToDoListQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetToDoListQuery, GetToDoListQueryVariables>(GetToDoListDocument, options);
+        }
+export type GetToDoListQueryHookResult = ReturnType<typeof useGetToDoListQuery>;
+export type GetToDoListLazyQueryHookResult = ReturnType<typeof useGetToDoListLazyQuery>;
+export type GetToDoListQueryResult = Apollo.QueryResult<GetToDoListQuery, GetToDoListQueryVariables>;
 export const CreateTodoDocument = gql`
     mutation CreateTodo($input: CreateTodoInput!, $condition: ModelTodoConditionInput) {
   createTodo(input: $input, condition: $condition) {
@@ -505,13 +549,6 @@ export type GetTodoQueryResult = Apollo.QueryResult<GetTodoQuery, GetTodoQueryVa
 export const ListTodosDocument = gql`
     query ListTodos($filter: ModelTodoFilterInput, $limit: Int, $nextToken: String) {
   listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      name
-      description
-      createdAt
-      updatedAt
-    }
     nextToken
   }
 }

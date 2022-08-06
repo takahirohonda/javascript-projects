@@ -27,8 +27,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint 'src/**/*.{ts,tsx,js,jsx}'",
+    "amplify-codegen": "amplify codegen",
     "gql-typings": "apollo codegen:generate --localSchemaFile=src/graphql/schema.json --target=typescript --includes=src/**/*.ts,src/**/*.tsx --no-addTypename --globalTypesFile=src/API.ts --outputFlat src/types",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "codegen": "graphql-codegen --config codegen.yml --localSchemaFile=src/graphql/schema.json --target=typescript --includes=src/**/*.ts,src/**/*.tsx --no-addTypename --globalTypesFile=src/API.ts --outputFlat src/types"
   },
   "eslintConfig": {
     "extends": [

@@ -272,3 +272,16 @@ export type OnDeleteTodoSubscription = {
     updatedAt: string,
   } | null,
 };
+
+export type GetToDoListQuery = {
+  listTodos?:  {
+    __typename: "ModelTodoConnection",
+    items:  Array< {
+      __typename: "Todo",
+      id: string,
+      description?: string | null,
+      createdAt: string,
+      name: string,
+    } | null >,
+  } | null,
+};
