@@ -1,27 +1,12 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true
+  root: true,
+  env: {
+    node: true,
   },
-  'extends': [
-    'airbnb',
-    'airbnb/hooks',
-    'eslint:recommended',
-    'plugin:react/recommended'
-  ],
-  'parserOptions': {
-    'ecmaFeatures': {
-      'jsx': true
-    },
-    'ecmaVersion': 12,
-    'sourceType': 'module'
+  extends: ['eslint-config-mdh-typescript-react'],
+  parserOptions: {
+    project: './tsconfig.json',
   },
-  'plugins': [
-    'react'
-  ],
-  'rules': {
-    semi: ['error', 'always'],
-    quotes: [2, 'single'],
-    indent: ['error', 2]
-  }
-};
+  overrides: [{ files: ['**/*.ts'] }],
+  rules: {},
+}

@@ -1,9 +1,64 @@
 # This "input" configures a global authorization rule to enable public access to
 # all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
-input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+# input AMPLIFY {
+#   globalAuthRule: AuthRule = { allow: public }
+# } # FOR TESTING ONLY!
 
-type Todo @model {
+type Todo @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String!
   description: String
+}
+
+enum Label {
+  SUPERHERO
+  HOLLIWOOD
+  INDIE
+  PSYCHOLOGICAL
+  ROMANTIC
+  PSYCHEDELIC
+  NEWVALUE
+  FEEL_GOOD
+  GANGSTER
+  SOCIAL_COMMENTARY
+}
+
+enum Genre {
+  ACTION
+  ADVENTURE
+  DRAMA
+  HORROR
+  COMEDY
+  SCIENCE_FICTION
+  CRIME
+  THRILLER
+  ROMANCE
+  MUSICAL
+  FANTASY
+  DOCUMENTARY
+  HISTORICAL
+  BIOGRAPHY
+  AVANT_GARDE
+  EPIC
+  WAR
+}
+
+type Actor {
+  name: String
+  roleName: String
+}
+
+type Movie
+  @model
+  @auth(rules: [{ allow: public, operations: [read] }, { allow: private }]) {
+  id: ID!
+  title: String!
+  year: String!
+  director: [String!]
+  language: [String!]
+  countryOfOrigin: [String!]
+  genre: [Genre!]!
+  subgenre: [Label]
+  actors: [Actor]
+  review: String
 }

@@ -44,3 +44,75 @@ export const deleteTodo = /* GraphQL */ `
     }
   }
 `;
+export const createMovie = /* GraphQL */ `
+  mutation CreateMovie(
+    $input: CreateMovieInput!
+    $condition: ModelMovieConditionInput
+  ) {
+    createMovie(input: $input, condition: $condition) {
+      id
+      title
+      year
+      director
+      language
+      countryOfOrigin
+      genre
+      subgenre
+      actors {
+        name
+        roleName
+      }
+      review
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateMovie = /* GraphQL */ `
+  mutation UpdateMovie(
+    $input: UpdateMovieInput!
+    $condition: ModelMovieConditionInput
+  ) {
+    updateMovie(input: $input, condition: $condition) {
+      id
+      title
+      year
+      director
+      language
+      countryOfOrigin
+      genre
+      subgenre
+      actors {
+        name
+        roleName
+      }
+      review
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteMovie = /* GraphQL */ `
+  mutation DeleteMovie(
+    $input: DeleteMovieInput!
+    $condition: ModelMovieConditionInput
+  ) {
+    deleteMovie(input: $input, condition: $condition) {
+      id
+      title
+      year
+      director
+      language
+      countryOfOrigin
+      genre
+      subgenre
+      actors {
+        name
+        roleName
+      }
+      review
+      createdAt
+      updatedAt
+    }
+  }
+`;

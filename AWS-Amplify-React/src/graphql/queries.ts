@@ -31,3 +31,48 @@ export const listTodos = /* GraphQL */ `
     }
   }
 `;
+export const getMovie = /* GraphQL */ `
+  query GetMovie($id: ID!) {
+    getMovie(id: $id) {
+      id
+      title
+      year
+      director
+      language
+      countryOfOrigin
+      genre
+      subgenre
+      actors {
+        name
+        roleName
+      }
+      review
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listMovies = /* GraphQL */ `
+  query ListMovies(
+    $filter: ModelMovieFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMovies(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        year
+        director
+        language
+        countryOfOrigin
+        genre
+        subgenre
+        review
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

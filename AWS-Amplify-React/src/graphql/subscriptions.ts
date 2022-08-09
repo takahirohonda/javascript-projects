@@ -3,8 +3,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateTodo = /* GraphQL */ `
-  subscription OnCreateTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onCreateTodo(filter: $filter) {
+  subscription OnCreateTodo {
+    onCreateTodo {
       id
       name
       description
@@ -14,8 +14,8 @@ export const onCreateTodo = /* GraphQL */ `
   }
 `;
 export const onUpdateTodo = /* GraphQL */ `
-  subscription OnUpdateTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onUpdateTodo(filter: $filter) {
+  subscription OnUpdateTodo {
+    onUpdateTodo {
       id
       name
       description
@@ -25,11 +25,74 @@ export const onUpdateTodo = /* GraphQL */ `
   }
 `;
 export const onDeleteTodo = /* GraphQL */ `
-  subscription OnDeleteTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onDeleteTodo(filter: $filter) {
+  subscription OnDeleteTodo {
+    onDeleteTodo {
       id
       name
       description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateMovie = /* GraphQL */ `
+  subscription OnCreateMovie {
+    onCreateMovie {
+      id
+      title
+      year
+      director
+      language
+      countryOfOrigin
+      genre
+      subgenre
+      actors {
+        name
+        roleName
+      }
+      review
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateMovie = /* GraphQL */ `
+  subscription OnUpdateMovie {
+    onUpdateMovie {
+      id
+      title
+      year
+      director
+      language
+      countryOfOrigin
+      genre
+      subgenre
+      actors {
+        name
+        roleName
+      }
+      review
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteMovie = /* GraphQL */ `
+  subscription OnDeleteMovie {
+    onDeleteMovie {
+      id
+      title
+      year
+      director
+      language
+      countryOfOrigin
+      genre
+      subgenre
+      actors {
+        name
+        roleName
+      }
+      review
       createdAt
       updatedAt
     }

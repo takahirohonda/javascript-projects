@@ -1,5 +1,11 @@
 {
   "AppSyncApiName": "awsamplifyreacttest",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authawsamplifyreacttest97e2b4d2",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
