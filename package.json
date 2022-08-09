@@ -1,0 +1,20 @@
+{
+  "name": "javascript-projects",
+  "version": "1.0.0",
+  "private": true,
+  "repository": "git@github.com:mydatahack/javascript-projects.git",
+  "license": "MIT",
+  "workspaces": [
+    "AWS-Amplify-React",
+    "Parcel-React-Ts"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "turbo": "^1.4.3"
+  }
+}
