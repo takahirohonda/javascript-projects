@@ -5,7 +5,6 @@ import { ApolloWrapper } from './ApolloWrapper'
 import { DemoPage } from 'pages/DemoPage/DemoPage'
 import { LandingPage } from 'pages/LandingPage/LandingPage'
 import { AdminPage } from 'pages/AdminPage/AdminPage'
-import { DemoRoute } from 'pages/DemoPage/DemoRoute'
 import { ToDoList } from 'pages/DemoPage//ToDoList/ToDoList'
 import ToDoWithAuth from 'pages/DemoPage//ToDoWithAuth/ToDoWithAuth'
 const App = () => (
@@ -18,10 +17,9 @@ const App = () => (
     <ApolloWrapper>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="demo" element={<DemoPage />}>
-          <Route path="todowithauth" element={<ToDoWithAuth />} />
-          <Route path="todolist" element={<ToDoList />} />
-        </Route>
+        <Route path="demo" element={<DemoPage />} />
+        <Route path="demo/todowithauth" element={<ToDoWithAuth />} />
+        <Route path="demo/todolist" element={<ToDoList />} />
         <Route path="admin" element={<AdminPage />} />
       </Routes>
     </ApolloWrapper>
