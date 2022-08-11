@@ -10430,10 +10430,10 @@ eslint-config-airbnb@^19.0.4:
     object.assign "^4.1.2"
     object.entries "^1.1.5"
 
-eslint-config-mdh-typescript-react@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-mdh-typescript-react/-/eslint-config-mdh-typescript-react-1.3.0.tgz#e938be0243f71a67351bb0451e1071fada8923e1"
-  integrity sha512-6XVlDFnZ7DQowKB4SFjcdigU3vAKHvdNmNESgeTHmV56OsxAbl3vQ4NBMXnRZawDVMq0B47FzCmK0cHS8vUeBg==
+eslint-config-mdh-typescript-react@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-mdh-typescript-react/-/eslint-config-mdh-typescript-react-1.4.0.tgz#d98ba78d529f37da59d1ba57e8e4fe7e43dc9773"
+  integrity sha512-Np22jx3H17QXPDD1zTk6QzI+eKb07m6wGruGgf7j9OON896p/Ix2t/+BU7umjeRVlHbkgeZhdSfQ5N2HAIIz3A==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.10.2"
     "@typescript-eslint/parser" "^5.10.2"
@@ -10444,7 +10444,7 @@ eslint-config-mdh-typescript-react@^1.3.0:
     eslint-plugin-import "^2.25.4"
     eslint-plugin-jest "^26.1.0"
     eslint-plugin-jsx-a11y "^6.5.1"
-    eslint-plugin-mdh "file:../../../../Library/Caches/Yarn/v6/npm-eslint-config-mdh-typescript-react-1.3.0-e938be0243f71a67351bb0451e1071fada8923e1-integrity/node_modules/eslint-config-mdh-typescript-react/eslint-rules"
+    eslint-plugin-mdh-react "^1.0.0"
     eslint-plugin-prettier "^4.0.0"
     eslint-plugin-react "^7.28.0"
     eslint-plugin-react-hooks "^4.3.0"
@@ -10564,8 +10564,10 @@ eslint-plugin-jsx-a11y@^6.5.1:
     minimatch "^3.1.2"
     semver "^6.3.0"
 
-"eslint-plugin-mdh@file:./eslint-rules":
-  version "1.0.0"
+eslint-plugin-mdh-react@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mdh-react/-/eslint-plugin-mdh-react-1.0.1.tgz#e7c75778b6986641fd19f81fe768af19ada91376"
+  integrity sha512-NUJCJ11bp7MBVihcWpDVfViDC39ZHvjCgOr1PYv/tedViK2apdDCgHMQKywtA3FUZzun/vyHSOh7O4ynN4nW+g==
 
 eslint-plugin-prettier@^4.0.0:
   version "4.2.1"
