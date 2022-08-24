@@ -6,7 +6,14 @@
 // The rest can be typescripts
 
 module.exports = {
-  plugins: ["gatsby-plugin-scss-typescript", "gatsby-plugin-react-helmet"],
+  graphqlTypegen: {
+    typesOutputPath: `src/types/gatsby-types.d.ts`,
+  },
+  plugins: [
+    "gatsby-plugin-sass",
+    "gatsby-plugin-dts-css-modules",
+    "gatsby-plugin-react-helmet",
+  ],
   siteMetadata: {
     siteUrl: "http://localhost:8000/",
     title: "Gatsby Example",
