@@ -2257,10 +2257,10 @@ type StringQueryOperatorInput = {
   readonly regex: InputMaybe<Scalars['String']>;
 };
 
-type GetSiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
+type GetSiteMetadataForSeoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type GetSiteMetadataQuery = { readonly site: { readonly siteMetadata: { readonly description: string | null, readonly image: string | null, readonly siteUrl: string | null, readonly title: string | null } | null } | null };
+type GetSiteMetadataForSeoQuery = { readonly site: { readonly siteMetadata: { readonly description: string | null, readonly image: string | null, readonly siteUrl: string | null, readonly title: string | null } | null } | null };
 
 type GetSiteMetadataTitleQueryVariables = Exact<{ [key: string]: never; }>;
 

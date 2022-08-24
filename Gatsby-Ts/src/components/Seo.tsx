@@ -9,8 +9,8 @@ interface SeoProps {
   path: string;
 }
 export const Seo = (props: SeoProps) => {
-  const data = useStaticQuery(graphql`
-    query GetSiteMetadata {
+  const data = useStaticQuery<Queries.GetSiteMetadataForSeoQuery>(graphql`
+    query GetSiteMetadataForSeo {
       site {
         siteMetadata {
           description

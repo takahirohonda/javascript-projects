@@ -24,7 +24,27 @@ From Gatsby 3, import statement has to be `import * as styles from ...`.
 
 Create a folder called `style` in `src`. Then, create a file called `gatsby-browser.js` in the root folder and add import statement.
 
-<strong>3. Querying Data with GraphQL</strong>
+### (3) GraphQL
+
+<strong>1. GraphQL type generation</strong>
+
+From v4, type generation comes out of the box. Just need to add `graphqlTypegen: true` in `gatsby-config.ts` (or add the output path as in this repo).
+
+Then, we can access the type with `Queries.whatever` as below.
+
+```tsx
+const data = useStaticQuery<Queries.GetSiteMetadataTitleQuery>(graphql`
+  query GetSiteMetadataTitle {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`);
+```
+
+<strong>2. Querying Data with GraphQL</strong>
 
 There are two types of GraphQL queries.
 

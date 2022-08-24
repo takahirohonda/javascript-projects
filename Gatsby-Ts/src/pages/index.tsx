@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
+
 import * as styles from "./index.module.scss";
 
 const Home: React.FC = () => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<Queries.GetSiteMetadataTitleQuery>(graphql`
     query GetSiteMetadataTitle {
       site {
         siteMetadata {
