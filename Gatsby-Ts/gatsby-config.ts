@@ -6,5 +6,11 @@
 // The rest can be typescripts
 
 module.exports = {
-  plugins: ["gatsby-plugin-scss-typescript"],
+  plugins: ["gatsby-plugin-scss-typescript", "gatsby-plugin-react-helmet"],
+  siteMetadata: {
+    siteUrl: "http://localhost:8000/",
+    title: "Gatsby Example",
+    description: "Gatsby Example with tips and well-known patterns",
+    image: "",
+  },
 };
