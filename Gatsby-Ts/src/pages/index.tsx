@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
+import { Layout } from "../components/Layout";
 
 import * as styles from "./index.module.scss";
 
@@ -17,12 +18,10 @@ const Home: React.FC = () => {
   const siteTitle = data?.site?.siteMetadata?.title;
 
   return (
-    <main>
-      <h1 className={styles.header}>{siteTitle}</h1>
-      <Link to="/">Home</Link>
-      <Link to="/About">About</Link>
-      <p></p>
-    </main>
+    <Layout siteTitle={siteTitle}>
+      <p>content goes here....</p>
+    </Layout>
   );
 };
+
 export default Home; // Inside the pages folder, we have to export default. Otherwise it won't get picked up.
