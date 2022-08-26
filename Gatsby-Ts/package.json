@@ -6,8 +6,7 @@
   "scripts": {
     "lint-css": "stylelint 'src/**/*.{c,sc,le}ss'",
     "fix-css": "printf '\\033[43mNote: You may need to run this again if any of your CSS property names contain uppercase letters.\\033[0m' && stylelint 'src/**/*.{c,sc,le}ss' --fix -f 'verbose'",
-    "lint-js": "eslint 'src/**/*.{ts,tsx,js,jsx}' --quiet",
-    "fix-js": "eslint 'src/**/*.{ts,tsx,js,jsx}' --fix --quiet",
+    "lint": "eslint 'src/**/*.{ts,tsx,js,jsx}' --quiet",
     "check-types": "tsc --noEmit",
     "test": "jest",
     "build": "gatsby build",
@@ -17,6 +16,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "gatsby": "^4.21.1",
     "gatsby-plugin-react-helmet": "^5.21.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -38,9 +38,8 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gatsby": "^4.21.1",
     "gatsby-plugin-dts-css-modules": "^3.0.0",
     "gatsby-plugin-mdx": "^4.0.0",
     "gatsby-plugin-sass": "^5.21.0",

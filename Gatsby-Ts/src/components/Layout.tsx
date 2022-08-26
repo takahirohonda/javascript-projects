@@ -1,8 +1,9 @@
-import React, { ReactNode } from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import { Seo } from "../components/Seo";
+import React, { ReactNode } from 'react'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Seo } from './Seo'
 
-import * as styles from "./layout.module.scss";
+import * as styles from './layout.module.scss'
+import '../styles/global.scss'
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,7 +14,14 @@ interface LayoutProps {
   siteTitle: string;
 }
 
-export const Layout = (props: LayoutProps) => {
+export const Layout = ({
+  title,
+  description,
+  image,
+  path,
+  siteTitle,
+  children,
+}: LayoutProps) => {
   const data = useStaticQuery<Queries.GetSiteMetadataForSeoQuery>(graphql`
     query GetSiteMetadataForSeo {
       site {
@@ -25,29 +33,29 @@ export const Layout = (props: LayoutProps) => {
         }
       }
     }
-  `);
-  const defaults = data?.site?.siteMetadata;
-  const title = props.title || defaults.title;
-  const description = props.description || defaults.description;
-  const siteUrl = new URL(props.image || defaults.siteUrl, defaults.siteUrl);
-  const image = new URL(props.path || defaults.image, defaults.siteUrl);
+  `)
+  const defaults = data?.site?.siteMetadata
+  const titleHead = title || defaults.title
+  const descriptionHead = description || defaults.description
+  const siteUrl = new URL(image || defaults.siteUrl, defaults.siteUrl)
+  const imageHead = new URL(path || defaults.image, defaults.siteUrl)
 
   return (
     <>
       <Seo
-        title={title}
-        description={description}
+        title={titleHead}
+        description={descriptionHead}
         siteUrl={siteUrl}
-        image={image}
+        image={imageHead}
       />
       <nav>
         <Link to="/">Home</Link>
         <Link to="/About">About</Link>
       </nav>
       <main>
-        <h1 className={styles.header}>{props.siteTitle}</h1>
-        {props.children}
+        <h1 className={styles.header}>{siteTitle}</h1>
+        {children}
       </main>
     </>
-  );
-};
+  )
+}

@@ -2,7 +2,8 @@
   "extends": [
     "airbnb",
     "airbnb/hooks",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
   ],
   "env": {
     "browser": true,
@@ -31,27 +32,52 @@
     }
   },
   "rules": {
+    "semi": ["error", "never"],
+    "quotes": [2, "single"],
     "no-use-before-define": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "max-len": ["error", { "ignoreComments": true }],
+    "react/require-default-props": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/explicit-function-return-type": ["off"],
     "@typescript-eslint/explicit-member-accessibility": ["off"],
     "@typescript-eslint/no-unused-vars": ["off"],
     "@typescript-eslint/no-untyped-public-signature": ["off"],
     "@typescript-eslint/no-var-requires": ["off"],
-    "import/extensions": ["error", "ignorePackages", {
-      "ts": "never",
-      "tsx": "never"
-    }],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.tsx", "**/*.spec.tsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.tsx", "**/*.spec.tsx"] }
+    ],
     "import/prefer-default-export": ["off"],
-    "indent": ["error", 2, { "ignoredNodes": ["ConditionalExpression"], "SwitchCase": 1 }],
+    "indent": [
+      "error",
+      2,
+      { "ignoredNodes": ["ConditionalExpression"], "SwitchCase": 1 }
+    ],
     "no-nested-ternary": ["off"],
     "object-curly-newline": ["off"],
     "react/button-has-type": ["off"],
     "react/display-name": ["off"],
     "react/jsx-boolean-value": ["off"],
     "react/jsx-closing-bracket-location": ["off"],
-    "react/jsx-filename-extension": ["off", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      "off",
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
     "react/jsx-indent": ["off"],
     "react/jsx-one-expression-per-line": ["off"],
     "react/jsx-props-no-spreading": ["off"],
@@ -59,7 +85,7 @@
   },
   "overrides": [
     {
-      "files": [ "**/style.scss.d.ts" ],
+      "files": ["**/style.scss.d.ts"],
       "rules": {
         "@typescript-eslint/no-empty-interface": ["off"]
       }

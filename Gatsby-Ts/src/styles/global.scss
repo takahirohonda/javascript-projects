@@ -1,12 +1,15 @@
-* {
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../static/Lato-Regular.ttf") format("truetype");
+}
+
+*,
+*:after,
+*:before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../../static/Lato-Regular.ttf') format('truetype');
+  font-family: "Lato";
 }

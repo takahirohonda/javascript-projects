@@ -1,5 +1,5 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react'
+import { Helmet } from 'react-helmet'
 
 interface SeoProps {
   title?: string;
@@ -26,4 +26,4 @@ export const Seo = ({ title, description, image, siteUrl }: SeoProps) => (
     <meta name="twitter:description" content={description} />
     {image && <meta name="twitter:image" content={image as any} />}
   </Helmet>
-);
+)
