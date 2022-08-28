@@ -13,6 +13,29 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-dts-css-modules",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mdx",
+      option: {
+        extensions: [`.mdx`, `.md`],
+        // This doesn't work
+        // defaultLayouts: {
+        //   posts: require.resolve(`${__dirname}src/components/Layout.tsx`),
+        // },
+      },
+    },
   ],
   siteMetadata: {
     siteUrl: "http://localhost:8000/",

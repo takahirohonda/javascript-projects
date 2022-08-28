@@ -162,3 +162,32 @@ query getArticle {
   }
 }
 ```
+
+### (4) Use MDX
+
+`gatsby-source-filesystem`: To load files into Gatsby data layer.
+`gatsby-plugin-page-creator`: Turn any folder into the folder that can turn into pages (it will turn the folder specified in `gatsby-source-filesystem` into actual pages. see `gatsby-config.ts`). Then use `gatsby-plugin-mdx` to transform the file into mdx node.
+
+```bash
+yarn add gatsby-source-filesystem gatsby-plugin-page-creator gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react -D
+```
+
+see: https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/
+
+- Setting layout
+
+1. We can simply import it into MDX
+
+```tsx
+import { Layout } from "../components/Layout";
+
+export default ({ children }) => <Layout>{children}</Layout>;
+
+# Hello
+
+this is my first blog
+```
+
+2. Set default layout in `gatsby-plugin-mdx` option
+
+See `gatsby-config.ts`
