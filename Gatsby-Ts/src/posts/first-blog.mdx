@@ -5,6 +5,7 @@ description: my first blog
 slug: /first-blog
 ---
 
+import { StaticImage } from "gatsby-plugin-image";
 import { PostLayout } from "../components/PostLayout";
 
 export default ({ children, pageContext }) => (
@@ -14,3 +15,13 @@ export default ({ children, pageContext }) => (
 # Hello World - First Blog
 
 this is my first blog
+
+![datastage-join-1](../images/test/DataStage_Join_1.PNG)
+
+![datastage-join-2](../images/test/DataStage_Join_2.PNG)
+
+<StaticImage
+  src="../images/test/DataStage_Join_1.PNG"
+  alt="datastage-lookup"
+  placeholder="dominantColor"
+/>

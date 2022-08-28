@@ -1,0 +1,32 @@
+---
+date: 2022-01-03
+title: My 3rd
+description: my 3rd blog
+slug: /third-blog
+---
+
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Link, graphql } from "gatsby";
+import { PostLayout } from "../components/PostLayout";
+
+export default ({ children, pageContext }) => (
+  <PostLayout pageContext={pageContext}>{children}</PostLayout>
+);
+
+export const query = graphql`
+  query DataStageJoin3ImageQueryInMdx {
+    file(name: { eq: "DataStage_Join_3" }) {
+      childrenImageSharp {
+        gatsbyImageData(placeholder: DOMINANT_COLOR)
+      }
+    }
+  }
+`;
+
+# Trying out Image query in mdx
+
+<p>{JSON.stringify(props.data)}</p>
+
+Nah, query returns the correct one, but it doesn't work...
+
+<GatsbyImage image={getImage(props.data.file)} alt="datastage-lookup" />

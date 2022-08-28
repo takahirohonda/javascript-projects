@@ -51,6 +51,7 @@ const Layout = ({
       <nav>
         <Link to="/">Home</Link>
         <Link to="/About">About</Link>
+        <Link to="/PageQuery">PageQuery</Link>
       </nav>
       <main>
         <h1 className={styles.header}>{siteTitle}</h1>

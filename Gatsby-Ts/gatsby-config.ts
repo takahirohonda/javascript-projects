@@ -13,6 +13,7 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-dts-css-modules",
     "gatsby-plugin-react-helmet",
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -21,15 +22,33 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
+      },
+    },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
       resolve: "gatsby-plugin-page-creator",
       options: {
         path: `${__dirname}/src/posts`,
       },
     },
+
     {
-      resolve: "gatsby-plugin-mdx",
-      option: {
-        extensions: [`.mdx`, `.md`],
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
         // This doesn't work
         // defaultLayouts: {
         //   posts: require.resolve(`${__dirname}src/components/Layout.tsx`),

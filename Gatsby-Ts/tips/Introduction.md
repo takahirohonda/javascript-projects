@@ -44,125 +44,6 @@ const data = useStaticQuery<Queries.GetSiteMetadataTitleQuery>(graphql`
 `);
 ```
 
-<strong>2. Querying Data with GraphQL</strong>
-
-There are two types of GraphQL queries.
-
-- Page Queries - happens on Page components: see example in `src/pages/index.js`.
-
-- Static Queries - happens on Non-Page components: see example in `src/components/title.js`.
-
-1. Site Metadata
-
-Add config siteMetadata to `gatsby-config.js`.
-
-```
-siteMetadata: {
-  title: 'My First Gatsby Site'
-},
-```
-
-Then go to `localhost:8000/_graphiql` and now we can query the data.
-
-```graphql
-{
-  site {
-    siteMetadata {
-      title
-    }
-  }
-}
-```
-
-<strong>4. Plugins</strong>
-
-The best way to extend Gatsby's capability is to use plugins. We can use plugins to fetch content and data from, for example, CMS and transform it. Once installed, we can add it to `gatsby-config.js`.
-
-- Example
-
-```bash
-yarn add gatsby-source-filesystem gatsby-transformer-remark --dev
-```
-
-The plugin brings new graphql that wasn't available before.
-
-```graphql
-{
-  allFile {
-    edges {
-      node {
-        id
-      }
-    }
-  }
-}
-```
-
-We can transform the data by the second plugin.
-
-```graphql
-{
-  allMarkdownRemark(sort: { fields: [frontmatter___data], order: DESC }) {
-    totalCount
-    edges {
-      node {
-        id
-        frontmatter {
-          title
-          image
-          data(formatString: "MMMM YYYY")
-        }
-        excerpt
-      }
-    }
-  }
-}
-```
-
-<strong>5. Using Markdown</strong>
-
-Create `markdown` folder in `src` and add markdown file.
-
-# GraphQL Queries
-
-```graphql
-query getpost {
-  markdownRemark(fields: { slug: { eq: "/welcome/" } }) {
-    html
-    frontmatter {
-      title
-      keyword
-    }
-  }
-}
-
-query second {
-  file {
-    absolutePath
-  }
-}
-
-query getArticle {
-  allMarkdownRemark(sort: { fields: [frontmatter___data], order: DESC }) {
-    totalCount
-    edges {
-      node {
-        id
-        frontmatter {
-          title
-          image
-          data(formatString: "MMMM YYYY")
-        }
-        fields {
-          slug
-        }
-        excerpt
-      }
-    }
-  }
-}
-```
-
 ### (4) Use MDX
 
 `gatsby-source-filesystem`: To load files into Gatsby data layer.
@@ -191,3 +72,32 @@ this is my first blog
 2. Set default layout in `gatsby-plugin-mdx` option
 
 See `gatsby-config.ts`
+
+## (5) Use Image
+
+`gatsby-plugin-sharp` creates different size images optimised for website, which can be queried by GraphQL.
+
+```bash
+yarn add gatsby-plugin-image gatsby-plugin-sharp gatsby-transformer-sharp gatsby-remark-images -D
+```
+
+Once configured in `gatsby-config.ts`, we can access the image with GraphQL. We can filer by the directory, too.
+
+`gatsby-remark-images` is used for getting the image with relative path in mdx files. Add in `gatsbyRemarkPlugins` in the `gatsby-plugin-mdx` option.
+
+```graphql
+query MyQuery {
+  allFile(filter: { relativeDirectory: { eq: "test" } }) {
+    nodes {
+      publicURL
+      prettySize
+      relativeDirectory
+      childImageSharp {
+        gatsbyImageData
+      }
+    }
+  }
+}
+```
+
+See more: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#restrictions-on-using-staticimage
