@@ -1,6 +1,7 @@
-import React from "react";
+import React from 'react'
 
-import { imageWrapper } from "./image.module.scss";
+import { imageWrapper } from './image.module.scss'
+
 interface ImageProps {
   src: string;
   alt: string;
@@ -12,4 +13,4 @@ export const Image = ({ src, alt }: ImageProps) => (
   <div className={imageWrapper}>
     <img src={src} alt={alt} />
   </div>
-);
+)

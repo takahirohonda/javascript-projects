@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import { Seo } from "./Seo";
+import React, { ReactNode } from 'react'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Seo } from './Seo'
 
-import * as styles from "./layout.module.scss";
-import "../styles/global.scss";
+import * as styles from './layout.module.scss'
+import '../styles/global.scss'
 
 interface LayoutProps {
   children: ReactNode;
@@ -33,12 +33,12 @@ const Layout = ({
         }
       }
     }
-  `);
-  const defaults = data?.site?.siteMetadata;
-  const titleHead = title || defaults.title;
-  const descriptionHead = description || defaults.description;
-  const siteUrl = new URL(image || defaults.siteUrl, defaults.siteUrl);
-  const imageHead = new URL(path || defaults.image, defaults.siteUrl);
+  `)
+  const defaults = data?.site?.siteMetadata
+  const titleHead = title || defaults.title
+  const descriptionHead = description || defaults.description
+  const siteUrl = new URL(image || defaults.siteUrl, defaults.siteUrl)
+  const imageHead = new URL(path || defaults.image, defaults.siteUrl)
 
   return (
     <>
@@ -58,7 +58,7 @@ const Layout = ({
         {children}
       </main>
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

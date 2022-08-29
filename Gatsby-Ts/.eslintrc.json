@@ -42,7 +42,7 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "max-len": ["error", { "ignoreComments": true }],
+    "max-len": ["error", { "code": 100, "ignoreComments": true }],
     "react/require-default-props": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/explicit-function-return-type": ["off"],

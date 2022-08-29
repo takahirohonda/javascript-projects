@@ -1,8 +1,8 @@
-import React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
-import Layout from "../components/Layout";
+import React from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import Layout from '../components/Layout'
 
-import * as styles from "./index.module.scss";
+import * as styles from './index.module.scss'
 
 const Home: React.FC = () => {
   const data = useStaticQuery<Queries.getMdxDataForBlogListAndGetSiteMetadataTitleQuery>(graphql`
@@ -24,11 +24,11 @@ const Home: React.FC = () => {
         }
       }
     }
-  `);
+  `)
 
-  const siteTitle = data?.site?.siteMetadata?.title;
+  const siteTitle = data?.site?.siteMetadata?.title
 
-  const posts = data.allMdx.nodes;
+  const posts = data.allMdx.nodes
 
   return (
     <Layout siteTitle={siteTitle}>
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         ))}
       </ul>
     </Layout>
-  );
-};
+  )
+}
 
-export default Home; // Inside the pages folder, we have to export default. Otherwise it won't get picked up.
+export default Home // Inside the pages folder, we have to export default. Otherwise it won't get picked up.

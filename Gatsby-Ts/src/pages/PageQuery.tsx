@@ -1,7 +1,7 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import Layout from "../components/Layout";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import Layout from '../components/Layout'
 
 export const query = graphql`
   query DataStageJoin3ImageQuery {
@@ -11,7 +11,7 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const About: React.FC = ({ data }: any) => (
   <Layout siteTitle="About Page">
@@ -28,6 +28,6 @@ const About: React.FC = ({ data }: any) => (
     {/* This is not working yet... */}
     <GatsbyImage image={getImage(data.file)} alt="datastage-lookup" />
   </Layout>
-);
+)
 
-export default About;
+export default About

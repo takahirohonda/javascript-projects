@@ -7,43 +7,43 @@
 
 module.exports = {
   graphqlTypegen: {
-    typesOutputPath: `src/types/gatsby-types.d.ts`,
+    typesOutputPath: 'src/types/gatsby-types.d.ts',
   },
   plugins: [
-    "gatsby-plugin-sass",
-    "gatsby-plugin-dts-css-modules",
-    "gatsby-plugin-react-helmet",
+    'gatsby-plugin-sass',
+    'gatsby-plugin-dts-css-modules',
+    'gatsby-plugin-react-helmet',
 
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "posts",
+        name: 'posts',
         path: `${__dirname}/src/posts`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-plugin-page-creator",
+      resolve: 'gatsby-plugin-page-creator',
       options: {
         path: `${__dirname}/src/posts`,
       },
     },
 
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: 'gatsby-plugin-mdx',
       options: {
         gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1200,
             },
@@ -57,9 +57,9 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    siteUrl: "http://localhost:8000/",
-    title: "Gatsby Example",
-    description: "Gatsby Example with tips and well-known patterns",
-    image: "",
+    siteUrl: 'http://localhost:8000/',
+    title: 'Gatsby Example',
+    description: 'Gatsby Example with tips and well-known patterns',
+    image: '',
   },
-};
+}

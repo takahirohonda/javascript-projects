@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "gatsby";
-import Layout from "../components/Layout";
-import { StaticImage } from "gatsby-plugin-image";
+import React from 'react'
+import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
+import Layout from '../components/Layout'
 
 const About: React.FC = () => (
   <Layout siteTitle="About Page">
@@ -14,6 +14,6 @@ const About: React.FC = () => (
       placeholder="dominantColor"
     />
   </Layout>
-);
+)
 
-export default About;
+export default About
