@@ -101,3 +101,14 @@ query MyQuery {
 ```
 
 See more: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#restrictions-on-using-staticimage
+
+## (6) SEO
+
+Adding head to html everywhere.
+
+```bash
+yarn add react-helmet
+yarn add @types/react-helmet gatsby-plugin-react-helmet -D
+```
+
+Add `gatsby-plugin-react-helmet` to `gatsby-config.ts`
