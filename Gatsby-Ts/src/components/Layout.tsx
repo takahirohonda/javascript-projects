@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { Seo } from './Seo'
 

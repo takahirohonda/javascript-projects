@@ -51,7 +51,7 @@ module.exports = {
         ],
         // This doesn't work
         // defaultLayouts: {
-        //   posts: require.resolve(`${__dirname}src/components/Layout.tsx`),
+        //   posts: require.resolve(`${__dirname}/src/components/Layout.tsx`),
         // },
       },
     },

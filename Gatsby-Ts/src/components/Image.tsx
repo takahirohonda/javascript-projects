@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { imageWrapper } from './image.module.scss'
 
 interface ImageProps {

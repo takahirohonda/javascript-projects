@@ -30,6 +30,12 @@ Create a folder called `style` in `src`. Then, create a file called `gatsby-brow
 
 From v4, type generation comes out of the box. Just need to add `graphqlTypegen: true` in `gatsby-config.ts` (or add the output path as in this repo).
 
+```js
+graphqlTypegen: {
+  typesOutputPath: 'src/types/gatsby-types.d.ts',
+},
+```
+
 Then, we can access the type with `Queries.whatever` as below.
 
 ```tsx
@@ -112,3 +118,18 @@ yarn add @types/react-helmet gatsby-plugin-react-helmet -D
 ```
 
 Add `gatsby-plugin-react-helmet` to `gatsby-config.ts`
+
+## (7) Use react-jsx
+
+We don't need to import React anymore. Add this into `gatsby-node.ts`
+
+```ts
+exports.onCreateBabelConfig = ({ actions }: any) => {
+  actions.setBabelPlugin({
+    name: "@babel/plugin-transform-react-jsx",
+    options: {
+      runtime: "automatic",
+    },
+  });
+};
+```

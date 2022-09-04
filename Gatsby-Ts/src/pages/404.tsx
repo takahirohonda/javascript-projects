@@ -1,4 +1,3 @@
-import React from 'react'
 import * as styles from './error.module.scss'
 
 // This only handles 400 errors - only http error 404 is handled.
