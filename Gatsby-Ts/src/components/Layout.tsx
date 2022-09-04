@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { ContentContainer } from '@mdhnpm/react-mdh-blog-components'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { Seo } from './Seo'
 
@@ -48,14 +49,16 @@ const Layout = ({
         siteUrl={siteUrl}
         image={imageHead}
       />
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/About">About</Link>
-        <Link to="/PageQuery">PageQuery</Link>
-      </nav>
       <main>
-        <h1 className={styles.header}>{siteTitle}</h1>
-        {children}
+        <ContentContainer>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/About">About</Link>
+            <Link to="/PageQuery">PageQuery</Link>
+          </nav>
+          <h1 className={styles.header}>{siteTitle}</h1>
+          {children}
+        </ContentContainer>
       </main>
     </>
   )
