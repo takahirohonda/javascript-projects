@@ -45,6 +45,12 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 }
 ```
 
-## (2) Adding relationship to data
+## (3) Adding relationship to data
 
 We can add relationship to the data -> see gatsby-node
+
+## (4) Serverless functions
+
+Gatsby has serverless function
+
+If we ever need to add quick login page... [Go here](./add-log-in.md)
