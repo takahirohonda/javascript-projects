@@ -34,6 +34,276 @@ type AVIFOptions = {
   readonly speed: InputMaybe<Scalars['Int']>;
 };
 
+type Author = Node & {
+  readonly books: ReadonlyArray<Book>;
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly name: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+};
+
+type AuthorConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<AuthorEdge>;
+  readonly group: ReadonlyArray<AuthorGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<Author>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type AuthorConnection_distinctArgs = {
+  field: AuthorFieldsEnum;
+};
+
+
+type AuthorConnection_groupArgs = {
+  field: AuthorFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type AuthorConnection_maxArgs = {
+  field: AuthorFieldsEnum;
+};
+
+
+type AuthorConnection_minArgs = {
+  field: AuthorFieldsEnum;
+};
+
+
+type AuthorConnection_sumArgs = {
+  field: AuthorFieldsEnum;
+};
+
+type AuthorEdge = {
+  readonly next: Maybe<Author>;
+  readonly node: Author;
+  readonly previous: Maybe<Author>;
+};
+
+type AuthorFieldsEnum =
+  | 'books'
+  | 'books.author.books'
+  | 'books.author.books.children'
+  | 'books.author.books.id'
+  | 'books.author.books.isbn'
+  | 'books.author.books.name'
+  | 'books.author.children'
+  | 'books.author.children.children'
+  | 'books.author.children.id'
+  | 'books.author.id'
+  | 'books.author.internal.content'
+  | 'books.author.internal.contentDigest'
+  | 'books.author.internal.contentFilePath'
+  | 'books.author.internal.description'
+  | 'books.author.internal.fieldOwners'
+  | 'books.author.internal.ignoreType'
+  | 'books.author.internal.mediaType'
+  | 'books.author.internal.owner'
+  | 'books.author.internal.type'
+  | 'books.author.name'
+  | 'books.author.parent.children'
+  | 'books.author.parent.id'
+  | 'books.children'
+  | 'books.children.children'
+  | 'books.children.children.children'
+  | 'books.children.children.id'
+  | 'books.children.id'
+  | 'books.children.internal.content'
+  | 'books.children.internal.contentDigest'
+  | 'books.children.internal.contentFilePath'
+  | 'books.children.internal.description'
+  | 'books.children.internal.fieldOwners'
+  | 'books.children.internal.ignoreType'
+  | 'books.children.internal.mediaType'
+  | 'books.children.internal.owner'
+  | 'books.children.internal.type'
+  | 'books.children.parent.children'
+  | 'books.children.parent.id'
+  | 'books.id'
+  | 'books.internal.content'
+  | 'books.internal.contentDigest'
+  | 'books.internal.contentFilePath'
+  | 'books.internal.description'
+  | 'books.internal.fieldOwners'
+  | 'books.internal.ignoreType'
+  | 'books.internal.mediaType'
+  | 'books.internal.owner'
+  | 'books.internal.type'
+  | 'books.isbn'
+  | 'books.name'
+  | 'books.parent.children'
+  | 'books.parent.children.children'
+  | 'books.parent.children.id'
+  | 'books.parent.id'
+  | 'books.parent.internal.content'
+  | 'books.parent.internal.contentDigest'
+  | 'books.parent.internal.contentFilePath'
+  | 'books.parent.internal.description'
+  | 'books.parent.internal.fieldOwners'
+  | 'books.parent.internal.ignoreType'
+  | 'books.parent.internal.mediaType'
+  | 'books.parent.internal.owner'
+  | 'books.parent.internal.type'
+  | 'books.parent.parent.children'
+  | 'books.parent.parent.id'
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.contentFilePath'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.contentFilePath'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.contentFilePath'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'id'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.contentFilePath'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'name'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.contentFilePath'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.contentFilePath'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.contentFilePath'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id';
+
+type AuthorFilterInput = {
+  readonly books: InputMaybe<BookFilterListInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type AuthorGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<AuthorEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<AuthorGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<Author>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type AuthorGroupConnection_distinctArgs = {
+  field: AuthorFieldsEnum;
+};
+
+
+type AuthorGroupConnection_groupArgs = {
+  field: AuthorFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type AuthorGroupConnection_maxArgs = {
+  field: AuthorFieldsEnum;
+};
+
+
+type AuthorGroupConnection_minArgs = {
+  field: AuthorFieldsEnum;
+};
+
+
+type AuthorGroupConnection_sumArgs = {
+  field: AuthorFieldsEnum;
+};
+
+type AuthorSortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<AuthorFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+};
+
 type BlurredOptions = {
   /** Force the output format for the low-res preview. Default is to use the same format as the input. You should rarely need to change this */
   readonly toFormat: InputMaybe<ImageFormat>;
@@ -41,11 +311,509 @@ type BlurredOptions = {
   readonly width: InputMaybe<Scalars['Int']>;
 };
 
+type Book = Node & {
+  readonly author: Author;
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly isbn: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+};
+
+type BookConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<BookEdge>;
+  readonly group: ReadonlyArray<BookGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<Book>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type BookConnection_distinctArgs = {
+  field: BookFieldsEnum;
+};
+
+
+type BookConnection_groupArgs = {
+  field: BookFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type BookConnection_maxArgs = {
+  field: BookFieldsEnum;
+};
+
+
+type BookConnection_minArgs = {
+  field: BookFieldsEnum;
+};
+
+
+type BookConnection_sumArgs = {
+  field: BookFieldsEnum;
+};
+
+type BookEdge = {
+  readonly next: Maybe<Book>;
+  readonly node: Book;
+  readonly previous: Maybe<Book>;
+};
+
+type BookFieldsEnum =
+  | 'author.books'
+  | 'author.books.author.books'
+  | 'author.books.author.children'
+  | 'author.books.author.id'
+  | 'author.books.author.name'
+  | 'author.books.children'
+  | 'author.books.children.children'
+  | 'author.books.children.id'
+  | 'author.books.id'
+  | 'author.books.internal.content'
+  | 'author.books.internal.contentDigest'
+  | 'author.books.internal.contentFilePath'
+  | 'author.books.internal.description'
+  | 'author.books.internal.fieldOwners'
+  | 'author.books.internal.ignoreType'
+  | 'author.books.internal.mediaType'
+  | 'author.books.internal.owner'
+  | 'author.books.internal.type'
+  | 'author.books.isbn'
+  | 'author.books.name'
+  | 'author.books.parent.children'
+  | 'author.books.parent.id'
+  | 'author.children'
+  | 'author.children.children'
+  | 'author.children.children.children'
+  | 'author.children.children.id'
+  | 'author.children.id'
+  | 'author.children.internal.content'
+  | 'author.children.internal.contentDigest'
+  | 'author.children.internal.contentFilePath'
+  | 'author.children.internal.description'
+  | 'author.children.internal.fieldOwners'
+  | 'author.children.internal.ignoreType'
+  | 'author.children.internal.mediaType'
+  | 'author.children.internal.owner'
+  | 'author.children.internal.type'
+  | 'author.children.parent.children'
+  | 'author.children.parent.id'
+  | 'author.id'
+  | 'author.internal.content'
+  | 'author.internal.contentDigest'
+  | 'author.internal.contentFilePath'
+  | 'author.internal.description'
+  | 'author.internal.fieldOwners'
+  | 'author.internal.ignoreType'
+  | 'author.internal.mediaType'
+  | 'author.internal.owner'
+  | 'author.internal.type'
+  | 'author.name'
+  | 'author.parent.children'
+  | 'author.parent.children.children'
+  | 'author.parent.children.id'
+  | 'author.parent.id'
+  | 'author.parent.internal.content'
+  | 'author.parent.internal.contentDigest'
+  | 'author.parent.internal.contentFilePath'
+  | 'author.parent.internal.description'
+  | 'author.parent.internal.fieldOwners'
+  | 'author.parent.internal.ignoreType'
+  | 'author.parent.internal.mediaType'
+  | 'author.parent.internal.owner'
+  | 'author.parent.internal.type'
+  | 'author.parent.parent.children'
+  | 'author.parent.parent.id'
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.contentFilePath'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.contentFilePath'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.contentFilePath'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'id'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.contentFilePath'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'isbn'
+  | 'name'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.contentFilePath'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.contentFilePath'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.contentFilePath'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id';
+
+type BookFilterInput = {
+  readonly author: InputMaybe<AuthorFilterInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly isbn: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type BookFilterListInput = {
+  readonly elemMatch: InputMaybe<BookFilterInput>;
+};
+
+type BookGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<BookEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<BookGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<Book>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type BookGroupConnection_distinctArgs = {
+  field: BookFieldsEnum;
+};
+
+
+type BookGroupConnection_groupArgs = {
+  field: BookFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type BookGroupConnection_maxArgs = {
+  field: BookFieldsEnum;
+};
+
+
+type BookGroupConnection_minArgs = {
+  field: BookFieldsEnum;
+};
+
+
+type BookGroupConnection_sumArgs = {
+  field: BookFieldsEnum;
+};
+
+type BookSortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<BookFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+};
+
 type BooleanQueryOperatorInput = {
   readonly eq: InputMaybe<Scalars['Boolean']>;
   readonly in: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Boolean']>>>;
   readonly ne: InputMaybe<Scalars['Boolean']>;
   readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Boolean']>>>;
+};
+
+type ChordProgression = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly chordProgression: Maybe<ReadonlyArray<Maybe<ChordProgressionChordProgression>>>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+};
+
+type ChordProgressionChordProgression = {
+  readonly id: Maybe<Scalars['String']>;
+  readonly note: Maybe<Scalars['String']>;
+  readonly pattern: Maybe<Scalars['String']>;
+};
+
+type ChordProgressionChordProgressionFilterInput = {
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly note: InputMaybe<StringQueryOperatorInput>;
+  readonly pattern: InputMaybe<StringQueryOperatorInput>;
+};
+
+type ChordProgressionChordProgressionFilterListInput = {
+  readonly elemMatch: InputMaybe<ChordProgressionChordProgressionFilterInput>;
+};
+
+type ChordProgressionConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<ChordProgressionEdge>;
+  readonly group: ReadonlyArray<ChordProgressionGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<ChordProgression>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type ChordProgressionConnection_distinctArgs = {
+  field: ChordProgressionFieldsEnum;
+};
+
+
+type ChordProgressionConnection_groupArgs = {
+  field: ChordProgressionFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type ChordProgressionConnection_maxArgs = {
+  field: ChordProgressionFieldsEnum;
+};
+
+
+type ChordProgressionConnection_minArgs = {
+  field: ChordProgressionFieldsEnum;
+};
+
+
+type ChordProgressionConnection_sumArgs = {
+  field: ChordProgressionFieldsEnum;
+};
+
+type ChordProgressionEdge = {
+  readonly next: Maybe<ChordProgression>;
+  readonly node: ChordProgression;
+  readonly previous: Maybe<ChordProgression>;
+};
+
+type ChordProgressionFieldsEnum =
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.contentFilePath'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.contentFilePath'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.contentFilePath'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'chordProgression'
+  | 'chordProgression.id'
+  | 'chordProgression.note'
+  | 'chordProgression.pattern'
+  | 'id'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.contentFilePath'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.contentFilePath'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.contentFilePath'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.contentFilePath'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id';
+
+type ChordProgressionFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly chordProgression: InputMaybe<ChordProgressionChordProgressionFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type ChordProgressionGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<ChordProgressionEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<ChordProgressionGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<ChordProgression>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type ChordProgressionGroupConnection_distinctArgs = {
+  field: ChordProgressionFieldsEnum;
+};
+
+
+type ChordProgressionGroupConnection_groupArgs = {
+  field: ChordProgressionFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type ChordProgressionGroupConnection_maxArgs = {
+  field: ChordProgressionFieldsEnum;
+};
+
+
+type ChordProgressionGroupConnection_minArgs = {
+  field: ChordProgressionFieldsEnum;
+};
+
+
+type ChordProgressionGroupConnection_sumArgs = {
+  field: ChordProgressionFieldsEnum;
+};
+
+type ChordProgressionSortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<ChordProgressionFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
 };
 
 type DateQueryOperatorInput = {
@@ -1889,6 +2657,9 @@ type PotraceTurnPolicy =
   | 'white';
 
 type Query = {
+  readonly allAuthor: AuthorConnection;
+  readonly allBook: BookConnection;
+  readonly allChordProgression: ChordProgressionConnection;
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
   readonly allImageSharp: ImageSharpConnection;
@@ -1898,6 +2669,10 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
+  readonly allStaticImage: StaticImageConnection;
+  readonly author: Maybe<Author>;
+  readonly book: Maybe<Book>;
+  readonly chordProgression: Maybe<ChordProgression>;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly imageSharp: Maybe<ImageSharp>;
@@ -1907,6 +2682,31 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
+  readonly staticImage: Maybe<StaticImage>;
+};
+
+
+type Query_allAuthorArgs = {
+  filter: InputMaybe<AuthorFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<AuthorSortInput>;
+};
+
+
+type Query_allBookArgs = {
+  filter: InputMaybe<BookFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<BookSortInput>;
+};
+
+
+type Query_allChordProgressionArgs = {
+  filter: InputMaybe<ChordProgressionFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ChordProgressionSortInput>;
 };
 
 
@@ -1979,6 +2779,44 @@ type Query_allSitePluginArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<SitePluginSortInput>;
+};
+
+
+type Query_allStaticImageArgs = {
+  filter: InputMaybe<StaticImageFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<StaticImageSortInput>;
+};
+
+
+type Query_authorArgs = {
+  books: InputMaybe<BookFilterListInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  name: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+};
+
+
+type Query_bookArgs = {
+  author: InputMaybe<AuthorFilterInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  isbn: InputMaybe<StringQueryOperatorInput>;
+  name: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+};
+
+
+type Query_chordProgressionArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  chordProgression: InputMaybe<ChordProgressionChordProgressionFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
 };
 
 
@@ -2162,6 +3000,46 @@ type Query_sitePluginArgs = {
   resolve: InputMaybe<StringQueryOperatorInput>;
   ssrAPIs: InputMaybe<StringQueryOperatorInput>;
   version: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_staticImageArgs = {
+  absolutePath: InputMaybe<StringQueryOperatorInput>;
+  accessTime: InputMaybe<DateQueryOperatorInput>;
+  atime: InputMaybe<DateQueryOperatorInput>;
+  atimeMs: InputMaybe<FloatQueryOperatorInput>;
+  base: InputMaybe<StringQueryOperatorInput>;
+  birthTime: InputMaybe<DateQueryOperatorInput>;
+  birthtime: InputMaybe<DateQueryOperatorInput>;
+  birthtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  blksize: InputMaybe<IntQueryOperatorInput>;
+  blocks: InputMaybe<IntQueryOperatorInput>;
+  changeTime: InputMaybe<DateQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  ctime: InputMaybe<DateQueryOperatorInput>;
+  ctimeMs: InputMaybe<FloatQueryOperatorInput>;
+  dev: InputMaybe<IntQueryOperatorInput>;
+  dir: InputMaybe<StringQueryOperatorInput>;
+  ext: InputMaybe<StringQueryOperatorInput>;
+  extension: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  ino: InputMaybe<IntQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  mode: InputMaybe<IntQueryOperatorInput>;
+  modifiedTime: InputMaybe<DateQueryOperatorInput>;
+  mtime: InputMaybe<DateQueryOperatorInput>;
+  mtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  name: InputMaybe<StringQueryOperatorInput>;
+  nlink: InputMaybe<IntQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  prettySize: InputMaybe<StringQueryOperatorInput>;
+  rdev: InputMaybe<IntQueryOperatorInput>;
+  relativeDirectory: InputMaybe<StringQueryOperatorInput>;
+  relativePath: InputMaybe<StringQueryOperatorInput>;
+  root: InputMaybe<StringQueryOperatorInput>;
+  size: InputMaybe<IntQueryOperatorInput>;
+  sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
+  uid: InputMaybe<IntQueryOperatorInput>;
 };
 
 type Site = Node & {
@@ -3356,6 +4234,366 @@ type SiteSortInput = {
 type SortOrderEnum =
   | 'ASC'
   | 'DESC';
+
+type StaticImage = Node & {
+  readonly absolutePath: Maybe<Scalars['String']>;
+  readonly accessTime: Maybe<Scalars['Date']>;
+  readonly atime: Maybe<Scalars['Date']>;
+  readonly atimeMs: Maybe<Scalars['Float']>;
+  readonly base: Maybe<Scalars['String']>;
+  readonly birthTime: Maybe<Scalars['Date']>;
+  readonly birthtime: Maybe<Scalars['Date']>;
+  readonly birthtimeMs: Maybe<Scalars['Float']>;
+  readonly blksize: Maybe<Scalars['Int']>;
+  readonly blocks: Maybe<Scalars['Int']>;
+  readonly changeTime: Maybe<Scalars['Date']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly ctime: Maybe<Scalars['Date']>;
+  readonly ctimeMs: Maybe<Scalars['Float']>;
+  readonly dev: Maybe<Scalars['Int']>;
+  readonly dir: Maybe<Scalars['String']>;
+  readonly ext: Maybe<Scalars['String']>;
+  readonly extension: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly ino: Maybe<Scalars['Int']>;
+  readonly internal: Internal;
+  readonly mode: Maybe<Scalars['Int']>;
+  readonly modifiedTime: Maybe<Scalars['Date']>;
+  readonly mtime: Maybe<Scalars['Date']>;
+  readonly mtimeMs: Maybe<Scalars['Float']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly nlink: Maybe<Scalars['Int']>;
+  readonly parent: Maybe<Node>;
+  readonly prettySize: Maybe<Scalars['String']>;
+  readonly rdev: Maybe<Scalars['Int']>;
+  readonly relativeDirectory: Maybe<Scalars['String']>;
+  readonly relativePath: Maybe<Scalars['String']>;
+  readonly root: Maybe<Scalars['String']>;
+  readonly size: Maybe<Scalars['Int']>;
+  readonly sourceInstanceName: Maybe<Scalars['String']>;
+  readonly uid: Maybe<Scalars['Int']>;
+};
+
+
+type StaticImage_accessTimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_atimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_birthTimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_birthtimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_changeTimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_ctimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_modifiedTimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type StaticImage_mtimeArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type StaticImageConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<StaticImageEdge>;
+  readonly group: ReadonlyArray<StaticImageGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<StaticImage>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type StaticImageConnection_distinctArgs = {
+  field: StaticImageFieldsEnum;
+};
+
+
+type StaticImageConnection_groupArgs = {
+  field: StaticImageFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type StaticImageConnection_maxArgs = {
+  field: StaticImageFieldsEnum;
+};
+
+
+type StaticImageConnection_minArgs = {
+  field: StaticImageFieldsEnum;
+};
+
+
+type StaticImageConnection_sumArgs = {
+  field: StaticImageFieldsEnum;
+};
+
+type StaticImageEdge = {
+  readonly next: Maybe<StaticImage>;
+  readonly node: StaticImage;
+  readonly previous: Maybe<StaticImage>;
+};
+
+type StaticImageFieldsEnum =
+  | 'absolutePath'
+  | 'accessTime'
+  | 'atime'
+  | 'atimeMs'
+  | 'base'
+  | 'birthTime'
+  | 'birthtime'
+  | 'birthtimeMs'
+  | 'blksize'
+  | 'blocks'
+  | 'changeTime'
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.contentFilePath'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.contentFilePath'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.contentFilePath'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'ctime'
+  | 'ctimeMs'
+  | 'dev'
+  | 'dir'
+  | 'ext'
+  | 'extension'
+  | 'id'
+  | 'ino'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.contentFilePath'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'mode'
+  | 'modifiedTime'
+  | 'mtime'
+  | 'mtimeMs'
+  | 'name'
+  | 'nlink'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.contentFilePath'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.contentFilePath'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.contentFilePath'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id'
+  | 'prettySize'
+  | 'rdev'
+  | 'relativeDirectory'
+  | 'relativePath'
+  | 'root'
+  | 'size'
+  | 'sourceInstanceName'
+  | 'uid';
+
+type StaticImageFilterInput = {
+  readonly absolutePath: InputMaybe<StringQueryOperatorInput>;
+  readonly accessTime: InputMaybe<DateQueryOperatorInput>;
+  readonly atime: InputMaybe<DateQueryOperatorInput>;
+  readonly atimeMs: InputMaybe<FloatQueryOperatorInput>;
+  readonly base: InputMaybe<StringQueryOperatorInput>;
+  readonly birthTime: InputMaybe<DateQueryOperatorInput>;
+  readonly birthtime: InputMaybe<DateQueryOperatorInput>;
+  readonly birthtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  readonly blksize: InputMaybe<IntQueryOperatorInput>;
+  readonly blocks: InputMaybe<IntQueryOperatorInput>;
+  readonly changeTime: InputMaybe<DateQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly ctime: InputMaybe<DateQueryOperatorInput>;
+  readonly ctimeMs: InputMaybe<FloatQueryOperatorInput>;
+  readonly dev: InputMaybe<IntQueryOperatorInput>;
+  readonly dir: InputMaybe<StringQueryOperatorInput>;
+  readonly ext: InputMaybe<StringQueryOperatorInput>;
+  readonly extension: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly ino: InputMaybe<IntQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly mode: InputMaybe<IntQueryOperatorInput>;
+  readonly modifiedTime: InputMaybe<DateQueryOperatorInput>;
+  readonly mtime: InputMaybe<DateQueryOperatorInput>;
+  readonly mtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly nlink: InputMaybe<IntQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly prettySize: InputMaybe<StringQueryOperatorInput>;
+  readonly rdev: InputMaybe<IntQueryOperatorInput>;
+  readonly relativeDirectory: InputMaybe<StringQueryOperatorInput>;
+  readonly relativePath: InputMaybe<StringQueryOperatorInput>;
+  readonly root: InputMaybe<StringQueryOperatorInput>;
+  readonly size: InputMaybe<IntQueryOperatorInput>;
+  readonly sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
+  readonly uid: InputMaybe<IntQueryOperatorInput>;
+};
+
+type StaticImageGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<StaticImageEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<StaticImageGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<StaticImage>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type StaticImageGroupConnection_distinctArgs = {
+  field: StaticImageFieldsEnum;
+};
+
+
+type StaticImageGroupConnection_groupArgs = {
+  field: StaticImageFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type StaticImageGroupConnection_maxArgs = {
+  field: StaticImageFieldsEnum;
+};
+
+
+type StaticImageGroupConnection_minArgs = {
+  field: StaticImageFieldsEnum;
+};
+
+
+type StaticImageGroupConnection_sumArgs = {
+  field: StaticImageFieldsEnum;
+};
+
+type StaticImageSortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<StaticImageFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+};
 
 type StringQueryOperatorInput = {
   readonly eq: InputMaybe<Scalars['String']>;

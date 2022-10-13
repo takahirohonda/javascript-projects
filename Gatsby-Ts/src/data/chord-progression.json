@@ -1,0 +1,11 @@
+[{
+  "chordProgression": [
+    { "pattern": "ii - V - I", "note": null, "id": "0" },
+    { "pattern": "ii7(b5) - V7(b9) - i", "note": null, "id": "1"  },
+    { "pattern": "I - vi - ii - V", "note": null, "id": "2"  },
+    { "pattern": "i - vi7(b5) - ii7(b5) - V", "note": null, "id": "3"  },
+    { "pattern": "iii - VI - ii - V", "note": "iii replaces I", "id": "4"  },
+    { "pattern": "I - i#dim - ii - V", "note": "i#dim replaces VI7", "id": "5"  },
+    { "pattern": "I - IV7 - iii - VI7", "note": "cycles into ii - V - I", "id": "6"  }
+  ]
+}]
