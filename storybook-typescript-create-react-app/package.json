@@ -70,7 +70,7 @@
     ]
   },
   "engines": {
-    "node": "^14.15.4"
+    "node": "^16.10.0"
   },
   "devDependencies": {
     "@apollo/client": "^3.5.8",
