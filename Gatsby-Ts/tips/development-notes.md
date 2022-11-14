@@ -121,7 +121,7 @@ Add `gatsby-plugin-react-helmet` to `gatsby-config.ts`
 
 ## (7) Use react-jsx
 
-We don't need to import React anymore. Add this into `gatsby-node.ts`
+We don't need to import React any more. Add this into `gatsby-node.ts`
 
 ```ts
 exports.onCreateBabelConfig = ({ actions }: any) => {
