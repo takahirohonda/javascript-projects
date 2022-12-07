@@ -10,6 +10,7 @@ module.exports = {
   'rules': {
     semi: ['error', 'always'],
     quotes: [2, 'single'],
-    indent: ['error', 2]
+    indent: ['error', 2],
+    'eol-last': ['error', 'always']
   }
 };
