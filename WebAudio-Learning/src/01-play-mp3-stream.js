@@ -13,14 +13,14 @@ let audio;
 function mousePressed() {
   if (!audioContext) {
     audioContext = new AudioContext();
-    audio = document.createElement("audio");
+    audio = document.createElement('audio');
     audio.loop = true;
-    audio.src = "audio/piano.mp3";
-    audio.play()
+    audio.src = 'audio/piano.mp3';
+    audio.play();
 
-    const source = audioContext.createMediaElementSource(audio)
+    const source = audioContext.createMediaElementSource(audio);
     // wire the source to the speakers
-    source.connect(audioContext.destination)
+    source.connect(audioContext.destination);
   } else {
     audio.pause();
     audioContext.close();
@@ -29,9 +29,9 @@ function mousePressed() {
 }
 
 function draw() {
-  background("black"); // filling the background
+  background('black'); // filling the background
 
-  fill("white");
+  fill('white');
   noStroke();
 
   // Draw play/pause button

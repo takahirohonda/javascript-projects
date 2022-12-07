@@ -5,9 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "live-server src",
-    "start-p5": "live-server src-p5"
+    "start-p5": "live-server src-p5",
+    "lint": "./node_modules/.bin/eslint ./"
   },
   "devDependencies": {
-    "live-server": "1.2.1"
+    "live-server": "1.2.1",
+    "eslint": "^8.29.0"
   }
 }
