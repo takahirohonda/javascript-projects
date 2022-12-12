@@ -10,13 +10,54 @@
 </head>
 <body>
 
-  <h2>Play a note</h2>
+  <h2>Making a single note</h2>
+  <button class="make-sound">Make Sound</button>
+
+  <h2>Loop sound</h2>
   <button class="play-button">Play</button>
+  <button class="stop-button">Stop</button>
+  <button class="hi-hat-controller">Hi-Hat Trigger</button>
+
   <script>
+    Tone.Transport.bpm.value = 107;
+
     const synth = new Tone.Synth().toDestination();
+    const membraneSynth = new Tone.MembraneSynth().toDestination();
+    const metalSynth = new Tone.MetalSynth().toDestination()
+    const hiHatLoopStarted = true
+    const synthLoop = new Tone.Loop(time => {
+      synth.triggerAttackRelease("C2", "8n", time)
+    }, "4n");
+    const membraneSynthLoop = new Tone.Loop(time => {
+      membraneSynth.triggerAttackRelease("C5", "8n", time);
+    }, "4n");
+    const hiHatLoop = new Tone.Loop(time => {
+      metalSynth.triggerAttackRelease("C6", "16n", time)
+    }, "16n");
+
+    document.querySelector('.make-sound').addEventListener('click', async () => {
+      synth.triggerAttackRelease("A3", "8n")
+      // Time based loop
+      // const now = Tone.now()
+      // synth.triggerAttackRelease("C4", "8n", now)
+      // membraneSynth.triggerAttackRelease("C4", "8n", now + 1)
+
+    })
+
    document.querySelector('.play-button').addEventListener('click', async () => {
-    synth.triggerAttackRelease("C4", "8n")
-    await Tone.start()
+    synthLoop.start(0)
+    membraneSynthLoop.start('8n')
+    hiHatLoop.start(0)
+
+    await Tone.Transport.start()
+  })
+
+  document.querySelector('.stop-button').addEventListener('click', async () => {
+    await Tone.Transport.stop()
+  })
+
+  document.querySelector('.hi-hat-controller').addEventListener('click', async () => {
+    hiHatLoop.mute = !hiHatLoop.mute
   })
   </script>
 </body>
