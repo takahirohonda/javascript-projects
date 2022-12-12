@@ -6,6 +6,7 @@
   "scripts": {
     "start": "live-server src",
     "start-p5": "live-server src-p5",
+    "start-examples": "live-server src-examples",
     "lint": "./node_modules/.bin/eslint ./"
   },
   "devDependencies": {

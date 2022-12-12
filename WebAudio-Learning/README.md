@@ -82,3 +82,13 @@ There are 2 ways to load and play audio, (1) Streaming and (2) Buffering. Stream
 
 - [Streaming code]('src/01-play-mp3-stream.js')
 - [Buffering code]('src/02-play-mp3-buffer.js')
+
+# Visualising Audio
+
+Waveform
+
+`analyserNode.getFloatTImeDomainData()`
+
+We get the array of audio in the window. The start of the window is called `playhead` and have a small section of the audio.
+
+`getFloatTimeDomainData(dataArray)` - data array from the start of window (playhead) to the end of the window.
