@@ -17,6 +17,10 @@
   <button class="play-button">Play</button>
   <button class="stop-button">Stop</button>
   <button class="hi-hat-controller">Hi-Hat Trigger</button>
+  
+  <h2>Sequencer</h2>
+  <button class="sequence-start">Start</button>
+  <button class="sequence-stop">Stop</button>
 
   <script>
     Tone.Transport.bpm.value = 107;
@@ -59,6 +63,18 @@
   document.querySelector('.hi-hat-controller').addEventListener('click', async () => {
     hiHatLoop.mute = !hiHatLoop.mute
   })
+
+  document.querySelector('.sequence-start').addEventListener('click', async () => {
+    const seq = new Tone.Sequence((time, note) => {
+      synth.triggerAttackRelease(note, 0.1, time);
+      // subdivisions are given as subarrays
+      }, ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]]).start(0);
+      Tone.Transport.start();
+  })
+
+  document.querySelector('.sequence-stop').addEventListener('click', async () => {
+    Tone.Transport.stop();
+})
   </script>
 </body>
 </html>
