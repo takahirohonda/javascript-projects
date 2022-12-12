@@ -7,13 +7,13 @@ function mousePressed() {
     audioContext = new AudioContext();
 
     // create new <audio> tag
-    audio = document.createElement("audio");
+    audio = document.createElement('audio');
 
     // optional; enable audio looping
     audio.loop = true;
 
     // set the URL of the audio asset
-    audio.src = "audio/piano.mp3";
+    audio.src = 'audio/piano.mp3';
 
     // trigger audio
     audio.play();
@@ -40,9 +40,9 @@ function windowResized() {
 
 function draw() {
   // fill background
-  background("black");
+  background('black');
 
-  fill("white");
+  fill('white');
   noStroke();
 
   // Draw play/pause button

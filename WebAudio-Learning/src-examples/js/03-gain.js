@@ -8,13 +8,13 @@ function mousePressed() {
     audioContext = new AudioContext();
 
     // Create <audio> tag
-    audio = document.createElement("audio");
+    audio = document.createElement('audio');
 
     // set URL to the MP3 within your Glitch.com assets
-    audio.src = "audio/piano.mp3";
+    audio.src = 'audio/piano.mp3';
 
     // To play audio through Glitch.com CDN
-    audio.crossOrigin = "Anonymous";
+    audio.crossOrigin = 'Anonymous';
 
     // Enable looping so the audio never stops
     audio.loop = true;
@@ -51,9 +51,9 @@ function windowResized() {
 
 function draw() {
   // fill background
-  background("black");
+  background('black');
 
-  fill("white");
+  fill('white');
   noStroke();
 
   // Draw play/pause button
@@ -63,6 +63,8 @@ function draw() {
     const volume = abs(mouseX - width / 2) / (width / 2);
 
     // Schedule a gradual shift in value with a small time constant
+    // if we do this, gainNode.gain.value = volume, it will have a pop sound because the change is too sudden.
+    // The best practise is to shift gradually from one value to another.
     gainNode.gain.setTargetAtTime(volume, audioContext.currentTime, 0.01);
 
     // Draw a volume meter

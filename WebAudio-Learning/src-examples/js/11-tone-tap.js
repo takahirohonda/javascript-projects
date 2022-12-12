@@ -19,7 +19,7 @@ function setup() {
   // Setup a synth with ToneJS
   synth = new Tone.Synth({
     oscillator: {
-      type: "sine",
+      type: 'sine',
     },
   });
 
@@ -70,11 +70,11 @@ function mousePressed() {
 
   // Hirajoshi scale in C
   // https://www.pianoscales.org/hirajoshi.html
-  const notes = ["C", "Db", "F", "Gb", "Bb"];
+  const notes = ['C', 'Db', 'F', 'Gb', 'Bb'];
   const octaves = [2, 3, 4];
   const octave = random(octaves);
   const note = random(notes);
-  synth.triggerAttackRelease(note + octave, "8n");
+  synth.triggerAttackRelease(note + octave, '8n');
 }
 
 // Draw a basic polygon, handles triangles, squares, pentagons, etc

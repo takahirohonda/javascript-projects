@@ -4,14 +4,14 @@ let signals;
 
 // Isolate specific bands of frequency with their own colors
 const frequencyBands = [
-  { frequency: 55, color: "#D5B3E5" },
-  { frequency: 110, color: "#7F3CAC" },
-  { frequency: 220, color: "#22A722" },
-  { frequency: 440, color: "#F1892A" },
-  { frequency: 570, color: "#E84420" },
-  { frequency: 960, color: "#F4CD00" },
-  { frequency: 2000, color: "#3E58E2" },
-  { frequency: 4000, color: "#F391C7" },
+  { frequency: 55, color: '#D5B3E5' },
+  { frequency: 110, color: '#7F3CAC' },
+  { frequency: 220, color: '#22A722' },
+  { frequency: 440, color: '#F1892A' },
+  { frequency: 570, color: '#E84420' },
+  { frequency: 960, color: '#F4CD00' },
+  { frequency: 2000, color: '#3E58E2' },
+  { frequency: 4000, color: '#F391C7' },
 ];
 
 function mousePressed() {
@@ -20,13 +20,13 @@ function mousePressed() {
     audioContext = new AudioContext();
 
     // Create <audio> tag
-    audio = document.createElement("audio");
+    audio = document.createElement('audio');
 
     // set URL to the MP3 within your Glitch.com assets
-    audio.src = "audio/piano.mp3";
+    audio.src = 'audio/piano.mp3';
 
     // To play audio through Glitch.com CDN
-    audio.crossOrigin = "Anonymous";
+    audio.crossOrigin = 'Anonymous';
 
     // Enable looping so the audio never stops
     audio.loop = true;
@@ -55,7 +55,7 @@ function mousePressed() {
       const filter = audioContext.createBiquadFilter();
       filter.frequency.value = frequency;
       filter.Q.value = 1;
-      filter.type = "bandpass";
+      filter.type = 'bandpass';
 
       source.connect(filter);
       filter.connect(analyser);
@@ -93,7 +93,7 @@ function windowResized() {
 
 function draw() {
   // fill background
-  background("black");
+  background('black');
 
   // Draw play/pause button
   const dim = min(width, height);
@@ -122,7 +122,7 @@ function draw() {
       rect(x, height / 2, sliceWidth, size);
     });
   } else {
-    fill("white");
+    fill('white');
     noStroke();
     polygon(width / 2, height / 2, dim * 0.1, 3);
   }

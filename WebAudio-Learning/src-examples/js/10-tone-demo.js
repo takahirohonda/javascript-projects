@@ -17,7 +17,7 @@ function setup() {
   // Setup a synth with ToneJS
   synth = new Tone.Synth({
     oscillator: {
-      type: "sine",
+      type: 'sine',
     },
   });
 

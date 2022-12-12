@@ -30,7 +30,8 @@ async function playSound() {
   // Ensure we are all loaded up
   await loadSound();
 
-  // Ensure we are in a resumed state
+  // Ensure we are in a resumed state - this prevents weird bug, so recommended to do resume().
+  // It's a bit of hack...
   await audioContext.resume();
 
   // Now create a new "Buffer Source" node for playing AudioBuffers

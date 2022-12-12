@@ -11,7 +11,7 @@ let sequence;
 let currentColumn = 0;
 
 // Here is the fixed scale we will use
-const notes = ["A3", "C4", "D4", "E3", "G4"];
+const notes = ['A3', 'C4', 'D4', 'E3', 'G4'];
 
 // Also can try other scales/notes
 // const notes = ["F#4", "E4", "C#4", "A4"];
@@ -72,7 +72,7 @@ async function setup() {
   synth.set({
     voice0: {
       oscillator: {
-        type: "triangle4",
+        type: 'triangle4',
       },
       volume: -30,
       envelope: {
@@ -103,7 +103,7 @@ async function setup() {
   // to be exactly in sync with the audio
   Tone.Transport.scheduleRepeat(() => {
     randomizeSequencer();
-  }, "2m");
+  }, '2m');
 }
 
 // On window resize, update the canvas size
