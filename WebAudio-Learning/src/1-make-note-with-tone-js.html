@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make note with tone js</title>
+  <script src="http://unpkg.com/tone"></script>
+  
+</head>
+<body>
+
+  <h2>Play a note</h2>
+  <button class="play-button">Play</button>
+  <script>
+    const synth = new Tone.Synth().toDestination();
+   document.querySelector('.play-button').addEventListener('click', async () => {
+    synth.triggerAttackRelease("C4", "8n")
+    await Tone.start()
+  })
+  </script>
+</body>
+</html>

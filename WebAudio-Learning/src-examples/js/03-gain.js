@@ -63,6 +63,8 @@ function draw() {
     const volume = abs(mouseX - width / 2) / (width / 2);
 
     // Schedule a gradual shift in value with a small time constant
+    // if we do this, gainNode.gain.value = volume, it will have a pop sound because the change is too sudden.
+    // The best practise is to shift gradually from one value to another.
     gainNode.gain.setTargetAtTime(volume, audioContext.currentTime, 0.01);
 
     // Draw a volume meter
