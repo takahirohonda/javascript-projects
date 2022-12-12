@@ -174,8 +174,7 @@ function randomizeSequencer() {
     for (let x = 0; x < row.length; x++) {
       row[x] = randomGaussian() > chance ? 1 : 0;
     }
-    // Loop through again and make sure we don't have two
-    // consectutive on values (it sounds bad)
+    // Loop through again and make sure we don't have two consecutive on values (it sounds bad)
     for (let x = 0; x < row.length - 1; x++) {
       if (row[x] === 1 && row[x + 1] === 1) {
         row[x + 1] = 0;
