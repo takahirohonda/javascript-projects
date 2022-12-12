@@ -9,13 +9,13 @@ function mousePressed() {
     audioContext = new AudioContext();
 
     // Create <audio> tag
-    audio = document.createElement("audio");
+    audio = document.createElement('audio');
 
     // set URL to the MP3 within your Glitch.com assets
-    audio.src = "audio/piano.mp3";
+    audio.src = 'audio/piano.mp3';
 
     // To play audio through Glitch.com CDN
-    audio.crossOrigin = "Anonymous";
+    audio.crossOrigin = 'Anonymous';
 
     // Enable looping so the audio never stops
     audio.loop = true;
@@ -64,7 +64,7 @@ function windowResized() {
 
 function draw() {
   // fill background
-  background("black");
+  background('black');
 
   // Draw play/pause button
   const dim = min(width, height);
@@ -77,12 +77,12 @@ function draw() {
     const scale = 10; // scale the data a bit so the circle is bigger
     const size = dim * scale * signal;
 
-    stroke("white");
+    stroke('white');
     noFill();
     strokeWeight(dim * 0.0075);
     circle(width / 2, height / 2, size);
   } else {
-    fill("white");
+    fill('white');
     noStroke();
     polygon(width / 2, height / 2, dim * 0.1, 3);
   }

@@ -1,7 +1,7 @@
 // Master volume in decibels
 const volume = -16;
 
-const MP3 = "audio/piano.mp3";
+const MP3 = 'audio/piano.mp3';
 
 // The synth we'll use for audio
 let player;
@@ -25,7 +25,7 @@ async function setup() {
   await player.load(MP3);
 
   // Wire up connections
-  autoFilter = new Tone.AutoFilter("8n");
+  autoFilter = new Tone.AutoFilter('8n');
   autoFilter.start();
 
   player.connect(autoFilter);
@@ -52,12 +52,12 @@ function draw() {
   autoFilter.frequency.value = map(mouseX, 0, width, 0.5, 1.5);
 
   // Draw a 'play' or 'stop' button
-  if (player.state === "started") {
+  if (player.state === 'started') {
     noStroke();
     fill(255);
     polygon(width / 2, height / 2, dim * 0.1, 4, PI / 4);
 
-    stroke("tomato");
+    stroke('tomato');
     noFill();
     strokeWeight(dim * 0.0175);
     circle(mouseX, mouseY, dim * 0.2);
@@ -71,7 +71,7 @@ function draw() {
 // Update the FX and trigger synth ON
 function mousePressed() {
   if (player && player.loaded) {
-    if (player.state === "started") {
+    if (player.state === 'started') {
       player.stop();
     } else {
       player.start();

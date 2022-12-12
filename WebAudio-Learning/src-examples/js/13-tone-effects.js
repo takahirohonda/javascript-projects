@@ -7,7 +7,7 @@ let synth;
 
 // Can be 'sine', 'sawtooth', 'triangle', 'square'
 // Can also add suffixes like sine8, square4
-const type = "square";
+const type = 'square';
 
 // Global volume in decibels
 const volume = -15;
@@ -24,7 +24,7 @@ let fxU = 0.5;
 let fxV = 0.5;
 
 // The notes we will use
-const notes = ["C5", "A3", "D4", "G4", "A4", "F4"];
+const notes = ['C5', 'A3', 'D4', 'G4', 'A4', 'F4'];
 
 // Create a new canvas to the browser size
 async function setup() {
@@ -51,7 +51,7 @@ async function setup() {
 
   // Create a new filter for the X slider
   filter = new Tone.Filter();
-  filter.type = "lowpass";
+  filter.type = 'lowpass';
 
   // Setup a synth with ToneJS
   synth = new Tone.Synth({
@@ -66,7 +66,7 @@ async function setup() {
       decay: 0.1,
       sustain: 0.5,
       release: 0.1,
-      attackCurve: "exponential",
+      attackCurve: 'exponential',
     },
   });
 

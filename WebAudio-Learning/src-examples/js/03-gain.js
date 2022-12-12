@@ -8,13 +8,13 @@ function mousePressed() {
     audioContext = new AudioContext();
 
     // Create <audio> tag
-    audio = document.createElement("audio");
+    audio = document.createElement('audio');
 
     // set URL to the MP3 within your Glitch.com assets
-    audio.src = "audio/piano.mp3";
+    audio.src = 'audio/piano.mp3';
 
     // To play audio through Glitch.com CDN
-    audio.crossOrigin = "Anonymous";
+    audio.crossOrigin = 'Anonymous';
 
     // Enable looping so the audio never stops
     audio.loop = true;
@@ -51,9 +51,9 @@ function windowResized() {
 
 function draw() {
   // fill background
-  background("black");
+  background('black');
 
-  fill("white");
+  fill('white');
   noStroke();
 
   // Draw play/pause button
