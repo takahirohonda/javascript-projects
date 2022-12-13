@@ -118,7 +118,6 @@ const baseSequence = new Tone.Sequence((time, note) => {
   .start(0);
 
 // Keybord 1 Sequence
-
 gainPolySynth.chain(feedbackDelay, Tone.Master);
 const highSynth = new Tone.PolySynth({
   volume: -16,
@@ -161,15 +160,18 @@ const synthLeadSequence3 = new Tone.Sequence((time, note) => {
   synthLead.triggerAttackRelease(note, '16n', time);
 }, ['F#4','F#4','F#4','F#4',,,,,,,,,,,,,])
   .start(0);
+
 // analyse
-
-const waveSynth = new Tone.Waveform();
-
+const waveSynth = new Tone.FFT();
+gainKick.connect(waveSynth);
 
 // play
 document.querySelector('.play-button').addEventListener('click', async () => {
   console.log('Play the track!');
-
+  console.log('Value' + waveSynth.getValue());
+  setTimeout(() => {
+    console.log(waveSynth.getValue());
+  }, 1000);
   await Tone.Transport.start();
 });
 
