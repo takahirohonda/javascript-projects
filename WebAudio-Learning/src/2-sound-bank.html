@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Bank</title>
+  <script src="http://unpkg.com/tone"></script>
+  <script src="./js/snare.js"></script>
+</head>
+<body>
+  <h2>Testing Drum sound</h2>
+  <button class="snare">Test Snare</button>
+
+    <script>
+      Tone.Transport.bpm.value = 107;
+      const synth = new Tone.Synth().toDestination();
+      const snare = new Snare();
+
+      const distortion = new Tone.Distortion({
+      distortion  : 0.1 ,
+      oversample  : "4x" // none, 2x, 4x
+      });
+      const reverb = new Tone.Freeverb(0.75,3000); 
+      const gain = new Tone.Gain(0.5);
+      const feedbackDelay = new Tone.FeedbackDelay("8n",0.25);
+      const compressor = new Tone.Compressor({
+      ratio  : 12 ,
+      threshold  : -24 ,
+      release  : 0.25 ,
+      attack  : 0.003 ,
+      knee  : 10
+      });
+
+      const bd = new Tone.MembraneSynth({
+        pitchDecay:0.05,
+        octaves: 4,
+        oscillator : {
+          type :"fmsine",
+          phase: 140,
+          modulationType: "sine",
+          modulationIndex:0.8,
+          partials: [1] //1,0.1,0.01,0.01
+        },
+        envelope :{
+          attack:0.01,
+          decay :0.74,
+          sustain: 0.71,
+          release: 0.05,
+          attackCurve :"exponential"
+        }
+      });
+
+
+
+      const cymbal = new Tone.MetalSynth({
+      frequency  : 800 ,
+      envelope  : {
+      attack  : 0.001 ,
+      decay  : 1.4 ,
+      release  : 0.2
+      }  ,
+      harmonicity  : 5.1 ,
+      modulationIndex  : 32 ,
+      resonance  : 4000 ,
+      octaves  : 1.5
+      })
+
+      gain.chain(reverb, compressor,  Tone.Master)
+      gain.chain(compressor, Tone.Master)
+
+      bd.chain(gain)
+
+      // const hiHatLoop = new Tone.Loop(time => {
+      //   cymbal.triggerAttackRelease("C6", "16n", time)
+      // }, "16n");
+
+      // const kickLoop = new Tone.Loop(time => {
+      //   bd.triggerAttackRelease("C2", "8n", time)
+      // }, "8n");
+
+      document.querySelector('.snare').addEventListener('click', async () => {
+        // hiHatLoop.start(0)
+        // kickLoop.start(0)
+        await Tone.Transport.start()
+      })
+    </script>
+  
+  
+</body>
+</html>
