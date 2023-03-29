@@ -39,8 +39,8 @@ const transitionStateFirst = (state, event) => {
   }
 };
 
-window.transitionEventFirst;
-window.transitionStateFirst;
+window.transitionEventFirst = transitionEventFirst;
+window.transitionStateFirst = transitionStateFirst;
 
 // With State machine
 const machine = {
@@ -63,5 +63,25 @@ const transitionStateMachine = (state, event) => {
   };
 };
 
-window.transitionStateMachine;
+window.transitionStateMachine = transitionStateMachine;
+```
+
+## Lesson 2 - Use xstate
+
+This start up guide is a good one (https://xstate.js.org/docs/guides/start.html#running-our-machine).
+
+`interpret` function is the mechanism to persist states in the application.
+
+```js
+import { createMachine, interpret } from "xstate";
+
+const machine = createMachine({});
+
+const service = interpret(machine).onTransition((state) => console.log(state));
+
+// Start the service
+service.start();
+
+// send event
+service.send({ type: "RESOLVE" });
 ```

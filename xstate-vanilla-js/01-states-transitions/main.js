@@ -10,9 +10,30 @@ import { inspect } from '@xstate/inspect';
 //   url: 'https://stately.ai/viz?inspect',
 // });
 
-const playerMachine = createMachine({});
+const playerMachine = createMachine({
+  id: "Player Machine",
+  initial: "loading",
+  states: {
+    loading: {
+      on: {
+        LOADED: "playing",
+      },
+    },
+    playing: {
+      on: {
+        PAUSE: "paused",
+      },
+    },
+    paused: {
+      on: {
+        PLAY: "playing",
+      },
+    },
+  },
+});
 
 const service = interpret(playerMachine, { devTools: true }).start();
+
 
 elements.elPlayButton.addEventListener('click', () => {
   service.send({ type: 'PLAY' });
