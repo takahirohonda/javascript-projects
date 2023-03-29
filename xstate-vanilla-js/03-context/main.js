@@ -10,6 +10,12 @@ const playerMachine = createMachine({
   context: {
     // Add initial context here for:
     // title, artist, duration, elapsed, likeStatus, volume
+    title: 'first song',
+    artist: 'my artist',
+    duration: 3,
+    elapsed: false,
+    likeStatus: 'unliked',
+    volume: 5
   },
   states: {
     loading: {
@@ -68,15 +74,21 @@ const playerMachine = createMachine({
       //   }
       // }
       // Also, reset the `elapsed` and `likeStatus` values.
+      title: (context, event) => event.data.title,
+      artist: (_, event) => event.data.artist,
+      duration: (_, event) => event.data.duration,
     }),
     likeSong: assign({
       // Assign the `likeStatus` to "liked"
+      likeStatus: (_, event) => 'liked',
     }),
     unlikeSong: assign({
       // Assign the `likeStatus` to 'unliked',
+      likeStatus: (_, event) => 'unliked',
     }),
     dislikeSong: assign({
       // Assign the `likeStatus` to 'disliked',
+      likeStatus: (context, event) => 'disliked'
     }),
     assignVolume: assign({
       // Assign the `volume` to the `level` from the event.
@@ -85,6 +97,7 @@ const playerMachine = createMachine({
       //   type: 'VOLUME',
       //   level: 5
       // }
+      volume: (_, event) => event.level
     }),
     assignTime: assign({
       // Assign the `elapsed` value to the `currentTime` from the event.
@@ -93,6 +106,7 @@ const playerMachine = createMachine({
       //   type: 'AUDIO.TIME',
       //   currentTime: 10
       // }
+      elapsed: (_, event) => event.currentTime,
     }),
     skipSong: () => {
       console.log('Skipping song');

@@ -85,3 +85,15 @@ service.start();
 // send event
 service.send({ type: "RESOLVE" });
 ```
+
+## Lesson 3 - actions
+
+`Actions` can define side-effect of the event.
+
+https://xstate.js.org/docs/guides/actions.html#api
+
+## Lesson 4 - context
+
+State machine can store context and manipulate the value.
+
+https://stately.ai/docs/xstate/actions/context
