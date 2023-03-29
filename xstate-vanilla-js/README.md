@@ -103,3 +103,110 @@ https://stately.ai/docs/xstate/actions/context
 https://stately.ai/docs/xstate/transitions-and-choices/guards
 
 `Eventless transition` (specified by always): if the condition is met, regardless of the event, the state transition is going to be taken.
+
+## Lesson 5 - compount states
+
+We can create child states to group the related states together. This is an organisational mechanism to simplify state machine.
+
+## Lesson 6 - Parallel States
+
+We can use `type: "parallel"` to create parallel states. Just like the compound states, parallel states are the organisational mechanism to reduce the transitions and complexity of the state machine.
+
+```js
+const machine = createMachine({
+  type: "parallel",
+  states: {
+    state1: {
+      initial: "state1-initial",
+      states: {},
+    },
+    state2: {
+      initial: "state2-initial",
+      states: {},
+    },
+  },
+});
+```
+
+## Lesson 7 - Final State
+
+We can add `type: done` in any state.
+
+```js
+{
+  states: {
+    loading: {
+      on: {
+        SUCCESS: {
+          target: 'loaded'
+        }
+      }
+    },
+    loaded: {
+      type: 'final',
+    }
+  }
+}
+```
+
+## Lesson 8 - History States
+
+Useful for remembering what the state was in previously and go back to it.
+
+https://stately.ai/docs/states/history-states
+
+## Lesson 9 - Actor Model
+
+https://stately.ai/docs/xstate/actors/intro
+
+with vanilla js
+
+```js
+function countBehavior(sate, event) {
+  if (event.type === "INC") {
+    return {
+      ...state,
+      count: state.count + 1,
+    };
+  }
+
+  return state;
+}
+function createActor(behaviour, initialState) {
+  let currentState = behaviour(initialState);
+  const listeners = new Set();
+  return {
+    send: (event) => {
+      currentState = behaviour(currentState, event);
+      listeners.forEach((listener) => {
+        listener(currentState);
+      });
+    },
+    subscribe: (listener) => {
+      listeners.add(listener);
+      listener(currentState);
+    },
+  };
+}
+
+const actor = createActor(countBehaviour, 0);
+
+windows.actor = actor;
+```
+
+with xstate
+
+use `invoke` attribute on a state to invoke an actor in the machine.
+
+```js
+const machine = createMachine({
+  invoke: {
+    src: (ctx, e) =>
+      new Promise((res) => {
+        setTimeout(() => {
+          res(42);
+        }, 1000);
+      }),
+  },
+});
+```

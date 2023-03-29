@@ -1,3 +1,3 @@
 import './style.css';
-import { createMachine } from 'xstate';
+import { createMachine, State } from 'xstate';
 
