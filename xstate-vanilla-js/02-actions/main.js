@@ -1,7 +1,6 @@
 // @ts-check
 import '../style.css';
-import { createMachine, assign, interpret, send } from 'xstate';
-import { raise } from 'xstate/lib/actions';
+import { createMachine, interpret } from 'xstate';
 import elements from '../utils/elements';
 
 const playerMachine = createMachine({

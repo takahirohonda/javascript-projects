@@ -2,7 +2,7 @@
 
 Based on Frontend Masters course (https://github.com/davidkpiano/frontend-masters-xstate-v2).
 
-## Lesson 1 - State modelling
+## Lesson 0 - State modelling
 
 Specifying behaviour (given-when-then, etc)
 
@@ -66,7 +66,7 @@ const transitionStateMachine = (state, event) => {
 window.transitionStateMachine = transitionStateMachine;
 ```
 
-## Lesson 2 - Use xstate
+## Lesson 1 - Use xstate
 
 This start up guide is a good one (https://xstate.js.org/docs/guides/start.html#running-our-machine).
 
@@ -86,14 +86,20 @@ service.start();
 service.send({ type: "RESOLVE" });
 ```
 
-## Lesson 3 - actions
+## Lesson 2 - actions
 
 `Actions` can define side-effect of the event.
 
 https://xstate.js.org/docs/guides/actions.html#api
 
-## Lesson 4 - context
+## Lesson 3 - context
 
 State machine can store context and manipulate the value.
 
 https://stately.ai/docs/xstate/actions/context
+
+## Lesson 4 - Guarded Transition
+
+https://stately.ai/docs/xstate/transitions-and-choices/guards
+
+`Eventless transition` (specified by always): if the condition is met, regardless of the event, the state transition is going to be taken.

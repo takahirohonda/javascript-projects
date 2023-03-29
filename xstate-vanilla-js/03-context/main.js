@@ -79,12 +79,13 @@ const playerMachine = createMachine({
       duration: (_, event) => event.data.duration,
     }),
     likeSong: assign({
-      // Assign the `likeStatus` to "liked"
-      likeStatus: (_, event) => 'liked',
+      // Assign the `likeStatus` to "liked" 
+      // - (_) is necessary to keep typescript happy instead of empty argument like ()
+      likeStatus: (_) => 'liked',
     }),
     unlikeSong: assign({
       // Assign the `likeStatus` to 'unliked',
-      likeStatus: (_, event) => 'unliked',
+      likeStatus: (_) => 'unliked',
     }),
     dislikeSong: assign({
       // Assign the `likeStatus` to 'disliked',
