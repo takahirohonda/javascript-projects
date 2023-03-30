@@ -83,6 +83,12 @@ const machine = createMachine({
 });
 ```
 
+## 3. Sharing context with React Context and State Machine
+
+`useService` -> `useMachine` has a third argument, called `service`. This is a static value and does not cause React re-rendering.
+
 # Reference
 
 Drawing -> https://excalidraw.com/
+
+[Actor models in 10 minutes](https://www.brianstorti.com/the-actor-model/)

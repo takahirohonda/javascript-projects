@@ -24,6 +24,23 @@ export const timerMachine = createMachine({
       // Don't forget to add the initial state (`normal`)!
       // ...
 
+      initial: 'normal',
+      states: {
+        normal: {
+          always: {
+            target: 'overtime',
+            cond: timerExpired,
+          },
+          on: {
+            RESET: undefined,
+          },
+        },
+        overtime: {
+          on: {
+            TOGGLE: undefined,
+          }
+        }
+      },
       on: {
         TICK: {
           actions: assign({

@@ -4,6 +4,11 @@ const ticker = (context, event) => (callback) => {
   // This is the callback service creator.
   // Add the implementation details here.
   // ...
+  const interval = setInterval(() => {
+    callback('TICK')
+  }, context.interval * 1000)
+
+  return () => clearInterval(interval)
 };
 
 const timerExpired = (ctx) => ctx.elapsed >= ctx.duration;
@@ -30,7 +35,11 @@ export const timerMachine = createMachine({
     },
     running: {
       // Invoke the callback service here.
+      // we start ticking the timer with invoke instead of doing it in useEffect.
       // ...
+      invoke: {
+        src: ticker,
+      },
 
       initial: 'normal',
       states: {
