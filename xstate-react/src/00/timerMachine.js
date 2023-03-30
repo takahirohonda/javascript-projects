@@ -1,6 +1,6 @@
 export const timerMachineConfig = {
   // ...
-  initialState: 'idle',
+  initial: 'idle',
   states: {
     idle: {
       on: {
@@ -29,8 +29,6 @@ export const timerMachineConfig = {
   }
 
 };
-
-// state -> { status: 'idle' }
 
 export const timerMachine = (state, event) => {
   // Add the logic that will read the timerMachineConfig

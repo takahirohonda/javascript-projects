@@ -12,7 +12,7 @@ export const Timer = () => {
   const state = ''; // delete me - useReducer instead!
 
   const [ timerState, dispatch ] = useReducer(timerMachine,
-    timerMachineConfig.initialState)
+    timerMachineConfig.initial)
 
   const { duration, elapsed, interval } = {
     duration: 60,
