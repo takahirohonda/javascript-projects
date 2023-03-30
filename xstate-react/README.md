@@ -62,6 +62,27 @@ export const Toggler = () => {
 };
 ```
 
+## 2. Eventless transition
+
+For example, if we need to set initial state dynamically, we can set the initial state as `unknown` and set it with always.
+
+```js
+const machine = createMachine({
+  initial: "unknown",
+  states: {
+    unknown: {
+      always: [
+        {
+          cond: () => new Date().getHours() > 12,
+          target: "morning",
+        },
+        { target: "day" },
+      ],
+    },
+  },
+});
+```
+
 # Reference
 
 Drawing -> https://excalidraw.com/

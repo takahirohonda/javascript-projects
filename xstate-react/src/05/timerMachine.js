@@ -20,10 +20,18 @@ export const timerMachine = createMachine({
       },
     },
     running: {
+      always: [
+        {
+          cond: (ctx) => ctx.elapsed >= ctx.duration,
+           target: 'expired'
+        }
+      ],
       on: {
         // Add an eventless (always) transition that checks if the timer is expired.
         // If so, go to the `expired` state.
         // ...
+
+        
 
         TICK: {
           actions: assign({
