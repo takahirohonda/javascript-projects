@@ -6,9 +6,13 @@ import { ProgressCircle } from '../ProgressCircle';
 
 // Import the timer machine and its initial state:
 // import { ... } from './timerMachine';
+import { timerMachine, timerMachineConfig } from './timerMachine'
 
 export const Timer = () => {
   const state = ''; // delete me - useReducer instead!
+
+  const [ timerState, dispatch ] = useReducer(timerMachine,
+    timerMachineConfig.initialState)
 
   const { duration, elapsed, interval } = {
     duration: 60,
@@ -19,7 +23,7 @@ export const Timer = () => {
   return (
     <div
       className="timer"
-      data-state={state}
+      data-state={timerState}
       style={{
         // @ts-ignore
         '--duration': duration,
@@ -32,11 +36,12 @@ export const Timer = () => {
       </header>
       <ProgressCircle />
       <div className="display">
-        <div className="label">{state}</div>
+        <div className="label">{timerState}</div>
         <div
           className="elapsed"
           onClick={() => {
             // ...
+            dispatch({ type: 'RESET' })
           }}
         >
           {Math.ceil(duration - elapsed)}
@@ -45,6 +50,7 @@ export const Timer = () => {
           <button
             onClick={() => {
               // ...
+              dispatch({ type: 'RESET' })
             }}
           >
             Reset
@@ -55,6 +61,7 @@ export const Timer = () => {
         <button
           onClick={() => {
             // ...
+            dispatch({ type: 'TOGGLE'})
           }}
           title="Pause timer"
         >
@@ -64,6 +71,8 @@ export const Timer = () => {
         <button
           onClick={() => {
             // ...
+            console.log('start timer clicked')
+            dispatch({ type: 'TOGGLE'})
           }}
           title="Start timer"
         >
